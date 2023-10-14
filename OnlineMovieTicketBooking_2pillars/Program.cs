@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OnlineMovieTicketBooking_2pillars.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace OnlineMovieTicketBooking_2pillars
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new BookingTicketsUI());
         }
     }
 }
