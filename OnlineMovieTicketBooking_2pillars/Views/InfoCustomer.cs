@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace OnlineMovieTicketBooking_2pillars
+namespace OnlineMovieTicketBooking_2pillars.Views
 {
-    public partial class Form1 : Form
+    public partial class InfoCustomer : Form
     {
-        public Form1()
+        public InfoCustomer()
         {
             InitializeComponent();
         }
