@@ -14,13 +14,10 @@ namespace OnlineMovieTicketBooking_2pillars.Views
 {
     public partial class BookingTicketsUI : Form
     {
-        Button btn_SeatSelecting;
-        int number = 1;
         decimal total = 0;
         public BookingTicketsUI()
         {
             InitializeComponent();
-            btn_SeatSelecting = null;
             ControlSetting();
         }
         private void BookingTicketsUI_Load(object sender, EventArgs e)
@@ -42,7 +39,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             }
         }
 
-        // Xử lý button ghế 
+        //  Button Seat Handle 
 
         private void SeatInit()
         {
@@ -158,66 +155,46 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             }
         }
 
-        // Combobox Movie
+        // Combobox Movie Handle
         private void ControlSetting()
         {
             cmb_MovieTitle.DisplayMember = "Name";
             cmb_MovieTitle.ValueMember = "ID";
             cmb_MovieTitle.DropDownStyle = ComboBoxStyle.DropDownList;
 
-            cmb_ShowTime.DisplayMember = "Start";
+            cmb_ShowTime.DisplayMember = "FullDateTime";
+            //cmb_ShowTime.DisplayMember = "Time";
             cmb_ShowTime.ValueMember = "ID";
-            cmb_ShowTime.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmb_ShowTime.DropDownStyle = ComboBoxStyle.DropDownList;            
         }
         private void cmb_MovieTitle_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Lấy ID của phim đã chọn từ ComboBox Movie
             if (cmb_MovieTitle.SelectedValue != null)
             {
                 int selectedMovieID = int.Parse(cmb_MovieTitle.SelectedValue.ToString());
 
-                // Sử dụng MovieDBContext để tải danh sách ScheduledMovies tương ứng với phim đã chọn
                 using (var dbContext = new MovieDBContext())
                 {
                     var scheduledMovies = dbContext.ScheduledMovies
                         .Where(s => s.MovieID == selectedMovieID)
-                        .Select(s => new { s.ID, s.Start })
                         .ToList();
 
-                    // Thiết lập nguồn dữ liệu cho ComboBox ScheduledMovie
-                    cmb_ShowTime.DataSource = scheduledMovies;
+                    var scheduledMoviesWithDateTime = scheduledMovies
+                        .Select(s => new
+                        {
+                            s.ID,
+                            FullDateTime = s.Date + "   " + s.Time // Kết hợp ngày và giờ thành một chuỗi
+                        })
+                        .ToList();
+
+                    cmb_ShowTime.DataSource = scheduledMoviesWithDateTime;
                 }
             }
-        }
-
-        private void groupBox_GhiChu_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void pnl_ListSeat_Paint(object sender, PaintEventArgs e)
         {
             pnl_ListSeat.BorderStyle = BorderStyle.FixedSingle;
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
