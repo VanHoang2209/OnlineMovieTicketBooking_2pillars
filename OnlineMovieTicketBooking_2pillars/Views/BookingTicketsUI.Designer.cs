@@ -32,6 +32,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.pnl_ListSeat = new System.Windows.Forms.Panel();
             this.groupBox_GhiChu = new System.Windows.Forms.GroupBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -57,11 +58,11 @@
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label15 = new System.Windows.Forms.Label();
             this.cmb_MovieTitle = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.cmb_ShowTime = new System.Windows.Forms.ComboBox();
             this.txt_Total = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.grb_Select = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.grb_InfoSelected = new System.Windows.Forms.GroupBox();
             this.btn_Confirm = new System.Windows.Forms.Button();
             this.txt_Seat = new System.Windows.Forms.TextBox();
             this.txt_ShowTime = new System.Windows.Forms.TextBox();
@@ -72,9 +73,6 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.btn_Close = new System.Windows.Forms.Button();
-            this.label21 = new System.Windows.Forms.Label();
-            this.cmb_ShowDate = new System.Windows.Forms.ComboBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.pnl_ListSeat.SuspendLayout();
             this.groupBox_GhiChu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).BeginInit();
@@ -82,8 +80,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.grb_Select.SuspendLayout();
+            this.grb_InfoSelected.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
@@ -149,7 +147,17 @@
             this.groupBox_GhiChu.Size = new System.Drawing.Size(301, 411);
             this.groupBox_GhiChu.TabIndex = 3;
             this.groupBox_GhiChu.TabStop = false;
-            this.groupBox_GhiChu.Enter += new System.EventHandler(this.groupBox_GhiChu_Enter);
+            // 
+            // textBox6
+            // 
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.ForeColor = System.Drawing.Color.Red;
+            this.textBox6.Location = new System.Drawing.Point(99, 16);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(106, 30);
+            this.textBox6.TabIndex = 6;
+            this.textBox6.Text = "Ghi chú\r\n";
+            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label13
             // 
@@ -409,24 +417,13 @@
             this.cmb_MovieTitle.TabIndex = 6;
             this.cmb_MovieTitle.SelectedIndexChanged += new System.EventHandler(this.cmb_MovieTitle_SelectedIndexChanged);
             // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(12, 132);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(80, 20);
-            this.label16.TabIndex = 5;
-            this.label16.Text = "Giờ chiếu";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
-            // 
             // cmb_ShowTime
             // 
             this.cmb_ShowTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_ShowTime.FormattingEnabled = true;
-            this.cmb_ShowTime.Location = new System.Drawing.Point(122, 124);
+            this.cmb_ShowTime.Location = new System.Drawing.Point(122, 85);
             this.cmb_ShowTime.Name = "cmb_ShowTime";
-            this.cmb_ShowTime.Size = new System.Drawing.Size(162, 28);
+            this.cmb_ShowTime.Size = new System.Drawing.Size(242, 28);
             this.cmb_ShowTime.TabIndex = 6;
             // 
             // txt_Total
@@ -439,53 +436,59 @@
             this.txt_Total.Size = new System.Drawing.Size(162, 27);
             this.txt_Total.TabIndex = 1;
             // 
-            // groupBox1
+            // grb_Select
             // 
-            this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.cmb_ShowDate);
-            this.groupBox1.Controls.Add(this.cmb_ShowTime);
-            this.groupBox1.Controls.Add(this.cmb_MovieTitle);
-            this.groupBox1.Controls.Add(this.label21);
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 46);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(430, 167);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Chọn thông tin";
+            this.grb_Select.Controls.Add(this.label15);
+            this.grb_Select.Controls.Add(this.cmb_ShowTime);
+            this.grb_Select.Controls.Add(this.cmb_MovieTitle);
+            this.grb_Select.Controls.Add(this.label16);
+            this.grb_Select.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grb_Select.Location = new System.Drawing.Point(12, 46);
+            this.grb_Select.Name = "grb_Select";
+            this.grb_Select.Size = new System.Drawing.Size(430, 148);
+            this.grb_Select.TabIndex = 7;
+            this.grb_Select.TabStop = false;
+            this.grb_Select.Text = "Chọn thông tin";
             // 
-            // groupBox2
+            // label16
             // 
-            this.groupBox2.Controls.Add(this.btn_Confirm);
-            this.groupBox2.Controls.Add(this.txt_Seat);
-            this.groupBox2.Controls.Add(this.txt_ShowTime);
-            this.groupBox2.Controls.Add(this.txt_ShowDate);
-            this.groupBox2.Controls.Add(this.txt_MovieTitle);
-            this.groupBox2.Controls.Add(this.label19);
-            this.groupBox2.Controls.Add(this.label20);
-            this.groupBox2.Controls.Add(this.label18);
-            this.groupBox2.Controls.Add(this.txt_Total);
-            this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Controls.Add(this.label17);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 219);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(430, 323);
-            this.groupBox2.TabIndex = 8;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Thông tin đã chọn";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(14, 93);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(86, 20);
+            this.label16.TabIndex = 5;
+            this.label16.Text = "Lịch chiếu";
+            // 
+            // grb_InfoSelected
+            // 
+            this.grb_InfoSelected.Controls.Add(this.btn_Confirm);
+            this.grb_InfoSelected.Controls.Add(this.txt_Seat);
+            this.grb_InfoSelected.Controls.Add(this.txt_ShowTime);
+            this.grb_InfoSelected.Controls.Add(this.txt_ShowDate);
+            this.grb_InfoSelected.Controls.Add(this.txt_MovieTitle);
+            this.grb_InfoSelected.Controls.Add(this.label19);
+            this.grb_InfoSelected.Controls.Add(this.label20);
+            this.grb_InfoSelected.Controls.Add(this.label18);
+            this.grb_InfoSelected.Controls.Add(this.txt_Total);
+            this.grb_InfoSelected.Controls.Add(this.label14);
+            this.grb_InfoSelected.Controls.Add(this.label17);
+            this.grb_InfoSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grb_InfoSelected.Location = new System.Drawing.Point(12, 200);
+            this.grb_InfoSelected.Name = "grb_InfoSelected";
+            this.grb_InfoSelected.Size = new System.Drawing.Size(430, 342);
+            this.grb_InfoSelected.TabIndex = 8;
+            this.grb_InfoSelected.TabStop = false;
+            this.grb_InfoSelected.Text = "Thông tin đã chọn";
             // 
             // btn_Confirm
             // 
-            this.btn_Confirm.Location = new System.Drawing.Point(149, 276);
+            this.btn_Confirm.Location = new System.Drawing.Point(149, 288);
             this.btn_Confirm.Name = "btn_Confirm";
             this.btn_Confirm.Size = new System.Drawing.Size(114, 39);
             this.btn_Confirm.TabIndex = 3;
             this.btn_Confirm.Text = "Xác nhận";
             this.btn_Confirm.UseVisualStyleBackColor = true;
-            this.btn_Confirm.Click += new System.EventHandler(this.button2_Click);
             // 
             // txt_Seat
             // 
@@ -573,38 +576,6 @@
             this.btn_Close.Text = "Thoát";
             this.btn_Close.UseVisualStyleBackColor = true;
             // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(12, 85);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(92, 20);
-            this.label21.TabIndex = 5;
-            this.label21.Text = "Ngày chiếu";
-            this.label21.Click += new System.EventHandler(this.label16_Click);
-            // 
-            // cmb_ShowDate
-            // 
-            this.cmb_ShowDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmb_ShowDate.FormattingEnabled = true;
-            this.cmb_ShowDate.Location = new System.Drawing.Point(122, 77);
-            this.cmb_ShowDate.Name = "cmb_ShowDate";
-            this.cmb_ShowDate.Size = new System.Drawing.Size(162, 28);
-            this.cmb_ShowDate.TabIndex = 6;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.ForeColor = System.Drawing.Color.Red;
-            this.textBox6.Location = new System.Drawing.Point(99, 16);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(106, 30);
-            this.textBox6.TabIndex = 6;
-            this.textBox6.Text = "Ghi chú\r\n";
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
-            // 
             // BookingTicketsUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -612,8 +583,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1529, 598);
             this.Controls.Add(this.btn_Close);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grb_InfoSelected);
+            this.Controls.Add(this.grb_Select);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pnl_ListSeat);
             this.Controls.Add(this.menuStrip1);
@@ -632,10 +603,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.grb_Select.ResumeLayout(false);
+            this.grb_Select.PerformLayout();
+            this.grb_InfoSelected.ResumeLayout(false);
+            this.grb_InfoSelected.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -671,11 +642,10 @@
         private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox cmb_MovieTitle;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox cmb_ShowTime;
         private System.Windows.Forms.TextBox txt_Total;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox grb_Select;
+        private System.Windows.Forms.GroupBox grb_InfoSelected;
         private System.Windows.Forms.TextBox txt_Seat;
         private System.Windows.Forms.TextBox txt_ShowDate;
         private System.Windows.Forms.TextBox txt_MovieTitle;
@@ -686,8 +656,7 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button btn_Confirm;
         private System.Windows.Forms.Button btn_Close;
-        private System.Windows.Forms.ComboBox cmb_ShowDate;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label16;
     }
 }
