@@ -3,9 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Net.NetworkInformation;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -40,6 +42,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
         }
 
         //  Button Seat Handle 
+        #region "Button Seat Handle"
 
         private void SeatInit()
         {
@@ -122,18 +125,27 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             txt_Total.Font = new Font(txt_Total.Font, FontStyle.Bold);
 
             int btnID = (int)btn.Tag; // Lấy ID từ Tag của nút
+            //list_SeatSelected = new ListBox();
 
             if (btn.BackColor == Color.Yellow)
             {
                 btn.BackColor = Color.Red;
                 total += PriceSeat(btn);
                 txt_Total.Text = total.ToString();
+
+                // Info selected
+                list_SeatSelected.Items.Add(btn.Text);
+                //UpdateSeatText();
+                
             }
             else if (btn.BackColor == Color.Aqua)
             {
                 btn.BackColor = Color.Red;
                 total += PriceSeat(btn);
                 txt_Total.Text = total.ToString();
+
+                list_SeatSelected.Items.Add(btn.Text);
+                //UpdateSeatText();
             }
             else if (btn.BackColor == Color.Red)
             {
@@ -148,6 +160,9 @@ namespace OnlineMovieTicketBooking_2pillars.Views
 
                 total -= PriceSeat(btn);
                 txt_Total.Text = total.ToString();
+
+                list_SeatSelected.Items.Remove(btn.Text);
+                //UpdateSeatText();
             }
             else if (btn.BackColor == Color.Gray)
             {
@@ -155,7 +170,16 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             }
         }
 
+
+        private void pnl_ListSeat_Paint(object sender, PaintEventArgs e)
+        {
+            pnl_ListSeat.BorderStyle = BorderStyle.FixedSingle;
+        }
+        #endregion
+
+
         // Combobox Movie Handle
+        #region "Combobox Movie and Combobox ScheduledMovie Handle"
         private void ControlSetting()
         {
             cmb_MovieTitle.DisplayMember = "Name";
@@ -165,7 +189,8 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             cmb_ShowTime.DisplayMember = "FullDateTime";
             //cmb_ShowTime.DisplayMember = "Time";
             cmb_ShowTime.ValueMember = "ID";
-            cmb_ShowTime.DropDownStyle = ComboBoxStyle.DropDownList;            
+            cmb_ShowTime.DropDownStyle = ComboBoxStyle.DropDownList;
+
         }
         private void cmb_MovieTitle_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -191,10 +216,29 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                 }
             }
         }
+        #endregion
 
-        private void pnl_ListSeat_Paint(object sender, PaintEventArgs e)
+
+        // Groupbox Infor Selected
+        #region ""Groupbox infor selected
+        private void cmb_ShowTime_SelectedIndexChanged(object sender, EventArgs e)
         {
-            pnl_ListSeat.BorderStyle = BorderStyle.FixedSingle;
+            if (cmb_ShowTime.SelectedValue != null)
+            {
+                string selectedShowTime = cmb_ShowTime.Text;
+                string[] parts = selectedShowTime.Split(new string[] { "   " }, StringSplitOptions.None);
+
+                if (parts.Length >= 2)
+                {
+                    string showDate = parts[0];
+                    string showTime = parts[1];
+
+                    txt_Time.Text = showTime;
+                    txt_Date.Text = showDate;
+                    txt_MovieTitle.Text = cmb_MovieTitle.Text;
+                }
+            }
         }
+        #endregion
     }
 }
