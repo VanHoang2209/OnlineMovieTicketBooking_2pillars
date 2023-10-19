@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OnlineMovieTicketBooking_2pillars.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
 {
     public partial class frm_ScheduleAdd : Form
     {
-        private static OMTBManagement context = new OMTBManagement();
+        private static MovieDBContext context = new MovieDBContext();
         List<Movie> listMovie = context.Movies.ToList();
         List<ScheduledMovie> listSchedule = context.ScheduledMovies.ToList();
         public frm_ScheduleAdd()
@@ -46,16 +47,26 @@ namespace OnlineMovieTicketBooking_2pillars.Views
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
+            try
+            {
                 if (CheckInput())
                 {
                     int id = int.Parse(txt_ScheduleID.Text);
                     ScheduledMovie existingSchedule = context.ScheduledMovies.FirstOrDefault(s => s.ID == id);
                     if (existingSchedule == null)
                     {
+                        using (var dbContext = new MovieDBContext())
+                        {
+                            foreach (var item in dbContext.ScheduledMovies)
+                            {
+                                if (item.Date == txt_Date.Text && item.Time == txt_Time.Text)
+                                    throw new Exception("Lịch chiếu bị trùng!");
+                            }
+                        }
                         ScheduledMovie scheduledMovie = new ScheduledMovie()
                         {
                             ID = int.Parse(txt_ScheduleID.Text),
-                            MovieID = cmb_MovieName.SelectedIndex,
+                            MovieID = int.Parse(cmb_MovieName.SelectedValue.ToString()),
                             Date = txt_Date.Text,
                             Time = txt_Time.Text
                         };
@@ -68,6 +79,12 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                 }
                 List<ScheduledMovie> listSchedule = context.ScheduledMovies.Include("Movie").ToList();
                 BindGrid(listSchedule);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+                
         }
 
         private bool CheckInput()
@@ -104,6 +121,14 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                 ScheduledMovie existingSchedule = context.ScheduledMovies.FirstOrDefault(s => s.ID == id);
                 if (existingSchedule != null)
                 {
+                    using (var dbContext = new MovieDBContext())
+                    {
+                        foreach (var item in dbContext.ScheduledMovies)
+                        {
+                            if (item.Date == txt_Date.Text && item.Time == txt_Time.Text)
+                                throw new Exception("Lịch chiếu bị trùng!");
+                        }
+                    }
                     existingSchedule.MovieID = int.Parse(cmb_MovieName.SelectedValue.ToString());
                     existingSchedule.Date = txt_Date.Text;
                     existingSchedule.Time = txt_Time.Text;

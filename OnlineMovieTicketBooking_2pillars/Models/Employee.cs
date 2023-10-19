@@ -1,4 +1,4 @@
-namespace OnlineMovieTicketBooking_2pillars
+namespace OnlineMovieTicketBooking_2pillars.Models
 {
     using System;
     using System.Collections.Generic;
@@ -6,13 +6,14 @@ namespace OnlineMovieTicketBooking_2pillars
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Customer")]
-    public partial class Customer
+    [Table("Employee")]
+    public partial class Employee
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Customer()
+        public Employee()
         {
-            Reservations = new HashSet<Reservation>();
+            Accounts = new HashSet<Account>();
+            Movies = new HashSet<Movie>();
         }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
@@ -23,14 +24,13 @@ namespace OnlineMovieTicketBooking_2pillars
         public string FullName { get; set; }
 
         [Required]
-        [StringLength(300)]
-        public string Email { get; set; }
-
-        [Required]
         [StringLength(50)]
         public string Phone { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reservation> Reservations { get; set; }
+        public virtual ICollection<Account> Accounts { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Movie> Movies { get; set; }
     }
 }

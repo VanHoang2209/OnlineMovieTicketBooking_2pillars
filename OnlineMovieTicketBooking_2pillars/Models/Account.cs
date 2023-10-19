@@ -1,4 +1,4 @@
-namespace OnlineMovieTicketBooking_2pillars
+namespace OnlineMovieTicketBooking_2pillars.Models
 {
     using System;
     using System.Collections.Generic;

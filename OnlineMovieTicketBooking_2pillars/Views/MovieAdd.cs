@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OnlineMovieTicketBooking_2pillars.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +14,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
 {
     public partial class frm_MovieAdd : Form
     {
-        public static OMTBManagement context = new OMTBManagement();
+        public static MovieDBContext context = new MovieDBContext();
         List<Movie> listMovie = context.Movies.ToList();
         public frm_MovieAdd()
         {

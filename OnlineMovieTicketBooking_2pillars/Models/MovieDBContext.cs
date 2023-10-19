@@ -1,14 +1,14 @@
-namespace OnlineMovieTicketBooking_2pillars
-{
-    using System;
-    using System.Data.Entity;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
+using System;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
+using System.Linq;
 
-    public partial class OMTBManagement : DbContext
+namespace OnlineMovieTicketBooking_2pillars.Models
+{
+    public partial class MovieDBContext : DbContext
     {
-        public OMTBManagement()
-            : base("name=OMTBManagement")
+        public MovieDBContext()
+            : base("name=MovieDBContext")
         {
         }
 
