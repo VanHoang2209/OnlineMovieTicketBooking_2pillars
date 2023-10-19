@@ -16,5 +16,10 @@ namespace OnlineMovieTicketBooking_2pillars.Views
         {
             InitializeComponent();
         }
+
+        private void HomeUI_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -125,6 +125,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\MovieAdd.resx">
       <DependentUpon>MovieAdd.cs</DependentUpon>
+
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
