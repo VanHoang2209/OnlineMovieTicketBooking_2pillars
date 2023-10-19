@@ -29,7 +29,11 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                 {
                     if (existingAccount.Password == txt_Password.Text)
                     {
+                        if (existingAccount.RoleID == -1)
+                            throw new Exception("Tài khoản đã bị vô hiệu!");
                         GlobalVariables.UserID = existingAccount.UserID;
+                        GlobalVariables.UserRole = existingAccount.Role.ID;
+                        GlobalVariables.AccountID = existingAccount.ID;
                         frm_EmployeeHome frm = new frm_EmployeeHome();
                         frm.ShowDialog();
                         txt_Username.Text = string.Empty;
@@ -52,6 +56,8 @@ namespace OnlineMovieTicketBooking_2pillars.Views
         private void btn_Back_Click(object sender, EventArgs e)
         {
             GlobalVariables.UserID = -1;
+            GlobalVariables.UserRole = -1;
+            GlobalVariables.AccountID = -1;
             this.Close();
         }
     }

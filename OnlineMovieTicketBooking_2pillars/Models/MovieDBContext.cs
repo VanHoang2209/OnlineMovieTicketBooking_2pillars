@@ -8,7 +8,7 @@ namespace OnlineMovieTicketBooking_2pillars.Models
     public partial class MovieDBContext : DbContext
     {
         public MovieDBContext()
-            : base("name=MovieDBContext")
+            : base("name=MovieDBContext1")
         {
         }
 
@@ -17,6 +17,7 @@ namespace OnlineMovieTicketBooking_2pillars.Models
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Movie> Movies { get; set; }
         public virtual DbSet<Reservation> Reservations { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<ScheduledMovie> ScheduledMovies { get; set; }
         public virtual DbSet<Seat> Seats { get; set; }
         public virtual DbSet<SeatType> SeatTypes { get; set; }
@@ -68,6 +69,11 @@ namespace OnlineMovieTicketBooking_2pillars.Models
                 .HasMany(e => e.Seats)
                 .WithMany(e => e.Reservations)
                 .Map(m => m.ToTable("SeatDetail").MapLeftKey("ReservationID").MapRightKey("SeatID"));
+
+            modelBuilder.Entity<Role>()
+                .HasMany(e => e.Accounts)
+                .WithRequired(e => e.Role)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<ScheduledMovie>()
                 .Property(e => e.Date)

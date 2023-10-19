@@ -22,6 +22,10 @@ namespace OnlineMovieTicketBooking_2pillars.Models
 
         public int UserID { get; set; }
 
+        public int RoleID { get; set; }
+
         public virtual Employee Employee { get; set; }
+
+        public virtual Role Role { get; set; }
     }
 }
