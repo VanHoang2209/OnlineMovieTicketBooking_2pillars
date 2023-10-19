@@ -240,5 +240,11 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             }
         }
         #endregion
+
+        private void đăngNhậpToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frm_Login frm_Login = new frm_Login();
+            frm_Login.ShowDialog();
+        }
     }
 }

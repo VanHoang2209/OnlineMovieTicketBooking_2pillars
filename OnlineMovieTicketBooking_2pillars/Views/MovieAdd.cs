@@ -42,9 +42,26 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                 err_Warning.SetError(txt_MovieID, "Mã phim không được để trống!");
                 return false;
             }
+            if (txt_MovieID.Text.Any(Char.IsLetter))
+            {
+                err_Warning.SetError(txt_MovieID, "Mã phim phải là số!");
+                return false;
+            }
             if (string.IsNullOrEmpty(txt_MovieName.Text))
             {
                 err_Warning.SetError(txt_MovieName, "Tên phim không được để trống!");
+                return false;
+            }
+            return true;
+        }
+
+        private bool CheckInput2()
+        {
+            err_Warning.Clear();
+            if (string.IsNullOrEmpty(txt_MovieID.Text))
+            {
+                err_Warning.SetError(txt_MovieID, "Mã phim không được để trống!");
+                return false;
             }
             return true;
         }
@@ -95,7 +112,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
-            if (CheckInput())
+            if (CheckInput2())
             {
                 int id = int.Parse(txt_MovieID.Text);
                 Movie existingMovie = context.Movies.FirstOrDefault(s => s.ID == id);

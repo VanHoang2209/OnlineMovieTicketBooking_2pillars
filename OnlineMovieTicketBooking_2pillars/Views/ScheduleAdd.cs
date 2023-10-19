@@ -83,8 +83,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
-                
+            }                
         }
 
         private bool CheckInput()
@@ -95,9 +94,14 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                 err_Warning.SetError(txt_ScheduleID, "Mã lịch chiếu không được để trống!");
                 return false;
             }
+            if (txt_ScheduleID.Text.Any(Char.IsLetter))
+            {
+                err_Warning.SetError(txt_ScheduleID, "Mã lịch chiếu phải là số!");
+                return false;
+            }
             if (cmb_MovieName.SelectedIndex == 0)
             {
-                err_Warning.SetError(cmb_MovieName, "Tên phim không được để trống!");
+                err_Warning.SetError(cmb_MovieName, "Vui lòng chọn tên phim!");
                 return false;
             }
             if (string.IsNullOrEmpty(txt_Date.Text))
@@ -107,7 +111,18 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             }
             if (string.IsNullOrEmpty(txt_Time.Text))
             {
-                err_Warning.SetError(txt_Time, "Giờ lịch chiếu không được để trống!");
+                err_Warning.SetError(txt_Time, "Giờ chiếu không được để trống!");
+                return false;
+            }
+            return true;
+        }
+
+        private bool CheckInput2()
+        {
+            err_Warning.Clear();
+            if (string.IsNullOrEmpty(txt_ScheduleID.Text))
+            {
+                err_Warning.SetError(txt_ScheduleID, "Mã lịch chiếu không được để trống!");
                 return false;
             }
             return true;
@@ -144,7 +159,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
-            if (CheckInput())
+            if (CheckInput2())
             {
                 int id = int.Parse(txt_ScheduleID.Text);
                 ScheduledMovie existingSchedule = context.ScheduledMovies.FirstOrDefault(s => s.ID == id);
