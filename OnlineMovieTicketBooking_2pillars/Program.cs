@@ -7,6 +7,10 @@ using System.Windows.Forms;
 
 namespace OnlineMovieTicketBooking_2pillars
 {
+    public static class GlobalVariables
+    {
+        public static int UserID { get; set; }
+    }
     internal static class Program
     {
         /// <summary>
@@ -17,7 +21,7 @@ namespace OnlineMovieTicketBooking_2pillars
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BookingTicketsUI());
+            Application.Run(new frm_Login());
         }
     }
 }
