@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.pnl_ListSeat = new System.Windows.Forms.Panel();
@@ -49,7 +50,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.đăngNhậpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngNhậpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,6 +73,7 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.btn_Close = new System.Windows.Forms.Button();
+            this.err_Warning = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnl_ListSeat.SuspendLayout();
             this.groupBox_GhiChu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).BeginInit();
@@ -82,13 +83,14 @@
             this.menuStrip1.SuspendLayout();
             this.grb_Select.SuspendLayout();
             this.grb_InfoSelected.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.err_Warning)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(0, 28);
+            this.textBox1.Location = new System.Drawing.Point(9, 37);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(1064, 41);
@@ -118,10 +120,10 @@
             this.pnl_ListSeat.Controls.Add(this.label5);
             this.pnl_ListSeat.Controls.Add(this.label4);
             this.pnl_ListSeat.Controls.Add(this.textBox1);
-            this.pnl_ListSeat.Location = new System.Drawing.Point(460, 46);
+            this.pnl_ListSeat.Location = new System.Drawing.Point(464, 46);
             this.pnl_ListSeat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnl_ListSeat.Name = "pnl_ListSeat";
-            this.pnl_ListSeat.Size = new System.Drawing.Size(1069, 532);
+            this.pnl_ListSeat.Size = new System.Drawing.Size(1084, 532);
             this.pnl_ListSeat.TabIndex = 0;
             this.pnl_ListSeat.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_ListSeat_Paint);
             // 
@@ -141,9 +143,9 @@
             this.groupBox_GhiChu.Controls.Add(this.pictureBox28);
             this.groupBox_GhiChu.Controls.Add(this.pictureBox26);
             this.groupBox_GhiChu.Location = new System.Drawing.Point(764, 85);
-            this.groupBox_GhiChu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox_GhiChu.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox_GhiChu.Name = "groupBox_GhiChu";
-            this.groupBox_GhiChu.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox_GhiChu.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox_GhiChu.Size = new System.Drawing.Size(301, 422);
             this.groupBox_GhiChu.TabIndex = 3;
             this.groupBox_GhiChu.TabStop = false;
@@ -242,7 +244,7 @@
             this.pictureBox31.BackColor = System.Drawing.Color.Aqua;
             this.pictureBox31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox31.Location = new System.Drawing.Point(21, 358);
-            this.pictureBox31.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox31.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox31.Name = "pictureBox31";
             this.pictureBox31.Size = new System.Drawing.Size(137, 36);
             this.pictureBox31.TabIndex = 1;
@@ -253,7 +255,7 @@
             this.pictureBox30.BackColor = System.Drawing.Color.Gray;
             this.pictureBox30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox30.Location = new System.Drawing.Point(21, 297);
-            this.pictureBox30.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox30.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox30.Name = "pictureBox30";
             this.pictureBox30.Size = new System.Drawing.Size(71, 36);
             this.pictureBox30.TabIndex = 1;
@@ -264,7 +266,7 @@
             this.pictureBox28.BackColor = System.Drawing.Color.Red;
             this.pictureBox28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox28.Location = new System.Drawing.Point(21, 239);
-            this.pictureBox28.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox28.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox28.Name = "pictureBox28";
             this.pictureBox28.Size = new System.Drawing.Size(71, 36);
             this.pictureBox28.TabIndex = 1;
@@ -275,7 +277,7 @@
             this.pictureBox26.BackColor = System.Drawing.Color.Yellow;
             this.pictureBox26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox26.Location = new System.Drawing.Point(21, 180);
-            this.pictureBox26.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox26.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox26.Name = "pictureBox26";
             this.pictureBox26.Size = new System.Drawing.Size(71, 36);
             this.pictureBox26.TabIndex = 1;
@@ -341,17 +343,6 @@
             this.label14.TabIndex = 2;
             this.label14.Text = "Thành tiền: ";
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1400, 582);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 37);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Tiếp tục";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -360,7 +351,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1529, 31);
+            this.menuStrip1.Size = new System.Drawing.Size(1569, 31);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -414,10 +405,10 @@
             // 
             this.cmb_MovieTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_MovieTitle.FormattingEnabled = true;
-            this.cmb_MovieTitle.Location = new System.Drawing.Point(123, 30);
+            this.cmb_MovieTitle.Location = new System.Drawing.Point(121, 27);
             this.cmb_MovieTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmb_MovieTitle.Name = "cmb_MovieTitle";
-            this.cmb_MovieTitle.Size = new System.Drawing.Size(301, 28);
+            this.cmb_MovieTitle.Size = new System.Drawing.Size(284, 28);
             this.cmb_MovieTitle.TabIndex = 6;
             this.cmb_MovieTitle.SelectedIndexChanged += new System.EventHandler(this.cmb_MovieTitle_SelectedIndexChanged);
             // 
@@ -437,9 +428,9 @@
             this.txt_Total.Enabled = false;
             this.txt_Total.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Total.Location = new System.Drawing.Point(120, 289);
-            this.txt_Total.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_Total.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Total.Name = "txt_Total";
-            this.txt_Total.Size = new System.Drawing.Size(199, 27);
+            this.txt_Total.Size = new System.Drawing.Size(216, 27);
             this.txt_Total.TabIndex = 1;
             this.txt_Total.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -497,21 +488,22 @@
             this.list_SeatSelected.FormattingEnabled = true;
             this.list_SeatSelected.ItemHeight = 20;
             this.list_SeatSelected.Location = new System.Drawing.Point(120, 149);
-            this.list_SeatSelected.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.list_SeatSelected.Margin = new System.Windows.Forms.Padding(4);
             this.list_SeatSelected.MultiColumn = true;
             this.list_SeatSelected.Name = "list_SeatSelected";
-            this.list_SeatSelected.Size = new System.Drawing.Size(301, 124);
+            this.list_SeatSelected.Size = new System.Drawing.Size(285, 144);
             this.list_SeatSelected.TabIndex = 4;
             // 
             // btn_Confirm
             // 
-            this.btn_Confirm.Location = new System.Drawing.Point(149, 324);
+            this.btn_Confirm.Location = new System.Drawing.Point(123, 322);
             this.btn_Confirm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Confirm.Name = "btn_Confirm";
-            this.btn_Confirm.Size = new System.Drawing.Size(115, 39);
+            this.btn_Confirm.Size = new System.Drawing.Size(132, 39);
             this.btn_Confirm.TabIndex = 3;
             this.btn_Confirm.Text = "Xác nhận";
             this.btn_Confirm.UseVisualStyleBackColor = true;
+            this.btn_Confirm.Click += new System.EventHandler(this.btn_Confirm_Click);
             // 
             // txt_Time
             // 
@@ -520,7 +512,7 @@
             this.txt_Time.Location = new System.Drawing.Point(123, 114);
             this.txt_Time.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Time.Name = "txt_Time";
-            this.txt_Time.Size = new System.Drawing.Size(199, 27);
+            this.txt_Time.Size = new System.Drawing.Size(216, 27);
             this.txt_Time.TabIndex = 1;
             this.txt_Time.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -531,7 +523,7 @@
             this.txt_Date.Location = new System.Drawing.Point(123, 74);
             this.txt_Date.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Date.Name = "txt_Date";
-            this.txt_Date.Size = new System.Drawing.Size(199, 27);
+            this.txt_Date.Size = new System.Drawing.Size(216, 27);
             this.txt_Date.TabIndex = 1;
             this.txt_Date.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -542,7 +534,7 @@
             this.txt_MovieTitle.Location = new System.Drawing.Point(123, 32);
             this.txt_MovieTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_MovieTitle.Name = "txt_MovieTitle";
-            this.txt_MovieTitle.Size = new System.Drawing.Size(301, 27);
+            this.txt_MovieTitle.Size = new System.Drawing.Size(282, 27);
             this.txt_MovieTitle.TabIndex = 1;
             this.txt_MovieTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -596,17 +588,21 @@
             this.btn_Close.TabIndex = 3;
             this.btn_Close.Text = "Thoát";
             this.btn_Close.UseVisualStyleBackColor = true;
+            this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
+            // 
+            // err_Warning
+            // 
+            this.err_Warning.ContainerControl = this;
             // 
             // BookingTicketsUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1529, 623);
+            this.ClientSize = new System.Drawing.Size(1569, 623);
             this.Controls.Add(this.btn_Close);
             this.Controls.Add(this.grb_InfoSelected);
             this.Controls.Add(this.grb_Select);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.pnl_ListSeat);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -628,6 +624,7 @@
             this.grb_Select.PerformLayout();
             this.grb_InfoSelected.ResumeLayout(false);
             this.grb_InfoSelected.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.err_Warning)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -654,7 +651,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pictureBox31;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem đăngNhậpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đăngNhậpToolStripMenuItem1;
@@ -678,6 +674,7 @@
         private System.Windows.Forms.Button btn_Close;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ErrorProvider err_Warning;
         private System.Windows.Forms.ListBox list_SeatSelected;
     }
 }
