@@ -372,6 +372,7 @@
             this.đăngNhậpToolStripMenuItem1.Name = "đăngNhậpToolStripMenuItem1";
             this.đăngNhậpToolStripMenuItem1.Size = new System.Drawing.Size(272, 28);
             this.đăngNhậpToolStripMenuItem1.Text = "Đăng nhập ";
+            this.đăngNhậpToolStripMenuItem1.Click += new System.EventHandler(this.đăngNhậpToolStripMenuItem1_Click);
             // 
             // thôngTinKháchĐãĐặtToolStripMenuItem
             // 

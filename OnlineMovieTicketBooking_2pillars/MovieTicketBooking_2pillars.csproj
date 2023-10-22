@@ -67,11 +67,18 @@
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\MovieDBContext.cs" />
     <Compile Include="Models\Reservation.cs" />
+    <Compile Include="Models\Role.cs" />
     <Compile Include="Models\ScheduledMovie.cs" />
     <Compile Include="Models\Seat.cs" />
     <Compile Include="Models\SeatType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\AccountAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AccountAdd.Designer.cs">
+      <DependentUpon>AccountAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\BookingInfo.cs" />
     <Compile Include="Views\BookingTicketsUI.cs">
       <SubType>Form</SubType>
@@ -79,29 +86,47 @@
     <Compile Include="Views\BookingTicketsUI.Designer.cs">
       <DependentUpon>BookingTicketsUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\EmployeeAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EmployeeAdd.Designer.cs">
+      <DependentUpon>EmployeeAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmployeeHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EmployeeHome.Designer.cs">
+      <DependentUpon>EmployeeHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PasswordChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PasswordChange.Designer.cs">
+      <DependentUpon>PasswordChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ScheduleAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ScheduleAdd.Designer.cs">
+      <DependentUpon>ScheduleAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\HomeUI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\HomeUI.Designer.cs">
       <DependentUpon>HomeUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\InfoCustomer.cs">
+    <Compile Include="Views\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\InfoCustomer.Designer.cs">
-      <DependentUpon>InfoCustomer.cs</DependentUpon>
+    <Compile Include="Views\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\LoginMemberUI.cs">
+    <Compile Include="Views\MovieAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\LoginMemberUI.Designer.cs">
-      <DependentUpon>LoginMemberUI.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\TicketsInfoUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\TicketsInfoUI.Designer.cs">
-      <DependentUpon>TicketsInfoUI.cs</DependentUpon>
+    <Compile Include="Views\MovieAdd.Designer.cs">
+      <DependentUpon>MovieAdd.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -112,12 +137,29 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\AccountAdd.resx">
+      <DependentUpon>AccountAdd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\BookingTicketsUI.resx">
       <DependentUpon>BookingTicketsUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\HomeUI.resx">
-      <DependentUpon>HomeUI.cs</DependentUpon>
+    <EmbeddedResource Include="Views\EmployeeAdd.resx">
+      <DependentUpon>EmployeeAdd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\EmployeeHome.resx">
+      <DependentUpon>EmployeeHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PasswordChange.resx">
+      <DependentUpon>PasswordChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ScheduleAdd.resx">
+      <DependentUpon>ScheduleAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MovieAdd.resx">
+      <DependentUpon>MovieAdd.cs</DependentUpon>
     <EmbeddedResource Include="Views\InfoCustomer.resx">
       <DependentUpon>InfoCustomer.cs</DependentUpon>
     </EmbeddedResource>
