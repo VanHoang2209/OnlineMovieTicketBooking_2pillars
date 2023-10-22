@@ -25,7 +25,6 @@ namespace OnlineMovieTicketBooking_2pillars.Views
     {
         //List<Button> seatsButton = new List<Button>();
         decimal total = 0;
-        string[] parts;
         private BookingInfo bookingInfo;
         private Customer customer;
         public BookingTicketsUI()
@@ -259,7 +258,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
 
         // Groupbox Infor Selected
         #region "Groupbox infor selected"
-        public void cmb_ShowTime_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmb_ShowTime_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmb_ShowTime.SelectedValue != null)
             {
@@ -369,7 +368,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             {
                 err_Warning.SetError(list_SeatSelected, "Vui lòng chọn ghế!");
                 return false;
-            }
+            }   
             return true;
         }
 
@@ -379,3 +378,4 @@ namespace OnlineMovieTicketBooking_2pillars.Views
         }
     }
 }
+
