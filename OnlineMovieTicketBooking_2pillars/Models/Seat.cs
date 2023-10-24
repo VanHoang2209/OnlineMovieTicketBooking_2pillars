@@ -12,7 +12,7 @@ namespace OnlineMovieTicketBooking_2pillars.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Seat()
         {
-            Reservations = new HashSet<Reservation>();
+            SeatDetails = new HashSet<SeatDetail>();
         }
 
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
@@ -29,6 +29,6 @@ namespace OnlineMovieTicketBooking_2pillars.Models
         public virtual SeatType SeatType { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Reservation> Reservations { get; set; }
+        public virtual ICollection<SeatDetail> SeatDetails { get; set; }
     }
 }

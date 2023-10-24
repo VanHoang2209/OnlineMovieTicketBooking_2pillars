@@ -1,32 +1,20 @@
 ﻿using OnlineMovieTicketBooking_2pillars.Models;
 using OnlineMovieTicketBooking_2pillars.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
-using System.Data.Entity.Migrations;
-using System.Data.Entity.Validation;
-using System.Data.SqlTypes;
-using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
-using System.Net.NetworkInformation;
-using System.Runtime.Remoting.Contexts;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OnlineMovieTicketBooking_2pillars.Views
 {
     public partial class BookingTicketsUI : Form
     {
-        //List<Button> seatsButton = new List<Button>();
         decimal total = 0;
         private BookingInfo bookingInfo;
+        private ScheduledMovie scheduledMovie;
         private Customer customer;
+
         public BookingTicketsUI()
         {
             InitializeComponent();
@@ -40,6 +28,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                 // Button
                 SeatInit();
                 DefaultSetting();
+
 
                 using (var dbContext = new MovieDBContext())
                 {
@@ -264,6 +253,8 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             {
                 string selectedShowTime = cmb_ShowTime.Text;
                 string[] parts = selectedShowTime.Split(new string[] { "   " }, StringSplitOptions.None);
+                int idScheduledMovie = int.Parse(cmb_ShowTime.SelectedValue.ToString());
+                int movieID = int.Parse(cmb_MovieTitle.SelectedValue.ToString());
 
                 if (parts.Length >= 2)
                 {
@@ -273,14 +264,58 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                     txt_Time.Text = showTime;
                     txt_Date.Text = showDate;
                     txt_MovieTitle.Text = cmb_MovieTitle.Text;
+
+
+                }
+                ResetSeats(movieID, idScheduledMovie);
+            }
+        }
+        private void ResetSeats(int? movieID, int idScheduledMovie)
+        {
+            using (var dbContext = new MovieDBContext())
+            {
+                var exist = dbContext.Reservations.FirstOrDefault(x => x.ScheduledMovie.ID == idScheduledMovie && x.ScheduledMovie.MovieID == movieID);
+                //MessageBox.Show(exist.ScheduledMovie.ID + " " + exist.ScheduledMovie.MovieID);
+                if (exist == null)
+                {
+                    //MessageBox.Show(exist);
+                    foreach (Button button in pnl_ListSeat.Controls.OfType<Button>())
+                    {
+                        button.BackColor = Color.Yellow;
+                    }
+                    list_SeatSelected.Items.Clear();
+                }
+
+                else
+                {
+                    // Đặt màu lại cho tất cả ghế trước khi cập nhật lại màu của các ghế đã đặt
+                    foreach (Button button in pnl_ListSeat.Controls.OfType<Button>())
+                    {
+                        button.BackColor = Color.Yellow;
+                    }
+                    list_SeatSelected.Items.Clear();
+
+                    var listSeatExist = dbContext.SeatDetails.Where(s => s.Reservation.ScheduledMovie.ID == idScheduledMovie && s.Reservation.ScheduledMovie.MovieID == movieID).ToList();
+
+                    foreach (var seat in listSeatExist)
+                    {
+                        Button button = pnl_ListSeat.Controls.OfType<Button>().FirstOrDefault(b => (int)b.Tag == seat.SeatID);
+
+                        if (button != null)
+                        {
+                            button.BackColor = Color.Gray;
+                        }
+                    }
                 }
             }
         }
         #endregion
 
+
+
         // Button Confirm
         #region "Button Confirm"
-        public void btn_Confirm_Click(object sender, EventArgs e)
+        public void Btn_Confirm_Click(object sender, EventArgs e)
         {
             try
             {
@@ -312,6 +347,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                             };
 
                             int customerID = customer.ID;
+
                             var reservation = new Reservation
                             {
                                 CustomerID = customerID,
@@ -324,9 +360,11 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                                 var seat = dbContext.Seats.SingleOrDefault(s => s.Name == seatName);
                                 if (seat != null)
                                 {
-                                    reservation.Seats.Add(seat);
+                                    reservation.SeatDetails.Add(new SeatDetail
+                                    {
+                                        SeatID = seat.ID
+                                    });
                                 }
-
                             }
 
                             dbContext.Reservations.Add(reservation);
@@ -346,6 +384,8 @@ namespace OnlineMovieTicketBooking_2pillars.Views
         }
         #endregion
 
+        // Input Checked
+        #region "Input Checked"
         private bool InputChecked()
         {
             err_Warning.Clear();
@@ -368,9 +408,10 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             {
                 err_Warning.SetError(list_SeatSelected, "Vui lòng chọn ghế!");
                 return false;
-            }   
+            }
             return true;
         }
+        #endregion
 
         private void btn_Close_Click(object sender, EventArgs e)
         {

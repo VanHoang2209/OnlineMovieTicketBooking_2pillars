@@ -13,5 +13,6 @@ namespace OnlineMovieTicketBooking_2pillars.ViewModels
         public List<string> SelectedSeats { get; set; }
         public decimal TotalPrice { get; set; }
         public int SeatID { get; set; }
+        
     }
 }

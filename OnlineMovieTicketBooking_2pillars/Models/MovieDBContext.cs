@@ -8,7 +8,7 @@ namespace OnlineMovieTicketBooking_2pillars.Models
     public partial class MovieDBContext : DbContext
     {
         public MovieDBContext()
-            : base("name=MovieDBContext1")
+            : base("name=MovieDBContext14")
         {
         }
 
@@ -20,6 +20,7 @@ namespace OnlineMovieTicketBooking_2pillars.Models
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<ScheduledMovie> ScheduledMovies { get; set; }
         public virtual DbSet<Seat> Seats { get; set; }
+        public virtual DbSet<SeatDetail> SeatDetails { get; set; }
         public virtual DbSet<SeatType> SeatTypes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -66,9 +67,9 @@ namespace OnlineMovieTicketBooking_2pillars.Models
                 .HasPrecision(18, 0);
 
             modelBuilder.Entity<Reservation>()
-                .HasMany(e => e.Seats)
-                .WithMany(e => e.Reservations)
-                .Map(m => m.ToTable("SeatDetail").MapLeftKey("ReservationID").MapRightKey("SeatID"));
+                .HasMany(e => e.SeatDetails)
+                .WithRequired(e => e.Reservation)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Role>()
                 .HasMany(e => e.Accounts)
@@ -96,6 +97,11 @@ namespace OnlineMovieTicketBooking_2pillars.Models
             modelBuilder.Entity<Seat>()
                 .Property(e => e.Price)
                 .HasPrecision(18, 0);
+
+            modelBuilder.Entity<Seat>()
+                .HasMany(e => e.SeatDetails)
+                .WithRequired(e => e.Seat)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<SeatType>()
                 .HasMany(e => e.Seats)
