@@ -325,6 +325,7 @@
             this.label14.TabIndex = 2;
             this.label14.Text = "Thành tiền: ";
             // 
+
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
