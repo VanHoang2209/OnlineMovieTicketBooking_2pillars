@@ -22,6 +22,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             InitializeComponent();
             ControlSetting();
         }
+
         private void BookingTicketsUI_Load(object sender, EventArgs e)
         {
             try
@@ -243,8 +244,14 @@ namespace OnlineMovieTicketBooking_2pillars.Views
 
         private void đăngNhậpToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            this.Hide();
             frm_Login frm_Login = new frm_Login();
-            frm_Login.ShowDialog();
+            frm_Login.Show();
+        }
+
+        private void btn_Close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

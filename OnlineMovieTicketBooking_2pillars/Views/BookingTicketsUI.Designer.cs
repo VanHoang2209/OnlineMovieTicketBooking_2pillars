@@ -141,9 +141,9 @@
             this.groupBox_GhiChu.Controls.Add(this.pictureBox28);
             this.groupBox_GhiChu.Controls.Add(this.pictureBox26);
             this.groupBox_GhiChu.Location = new System.Drawing.Point(764, 85);
-            this.groupBox_GhiChu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox_GhiChu.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox_GhiChu.Name = "groupBox_GhiChu";
-            this.groupBox_GhiChu.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox_GhiChu.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox_GhiChu.Size = new System.Drawing.Size(301, 422);
             this.groupBox_GhiChu.TabIndex = 3;
             this.groupBox_GhiChu.TabStop = false;
@@ -242,7 +242,7 @@
             this.pictureBox31.BackColor = System.Drawing.Color.Aqua;
             this.pictureBox31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox31.Location = new System.Drawing.Point(21, 358);
-            this.pictureBox31.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox31.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox31.Name = "pictureBox31";
             this.pictureBox31.Size = new System.Drawing.Size(137, 36);
             this.pictureBox31.TabIndex = 1;
@@ -253,7 +253,7 @@
             this.pictureBox30.BackColor = System.Drawing.Color.Gray;
             this.pictureBox30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox30.Location = new System.Drawing.Point(21, 297);
-            this.pictureBox30.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox30.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox30.Name = "pictureBox30";
             this.pictureBox30.Size = new System.Drawing.Size(71, 36);
             this.pictureBox30.TabIndex = 1;
@@ -264,7 +264,7 @@
             this.pictureBox28.BackColor = System.Drawing.Color.Red;
             this.pictureBox28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox28.Location = new System.Drawing.Point(21, 239);
-            this.pictureBox28.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox28.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox28.Name = "pictureBox28";
             this.pictureBox28.Size = new System.Drawing.Size(71, 36);
             this.pictureBox28.TabIndex = 1;
@@ -275,7 +275,7 @@
             this.pictureBox26.BackColor = System.Drawing.Color.Yellow;
             this.pictureBox26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox26.Location = new System.Drawing.Point(21, 180);
-            this.pictureBox26.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox26.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox26.Name = "pictureBox26";
             this.pictureBox26.Size = new System.Drawing.Size(71, 36);
             this.pictureBox26.TabIndex = 1;
@@ -345,7 +345,7 @@
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(1400, 582);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 37);
             this.button1.TabIndex = 3;
@@ -437,7 +437,7 @@
             this.txt_Total.Enabled = false;
             this.txt_Total.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Total.Location = new System.Drawing.Point(120, 289);
-            this.txt_Total.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_Total.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Total.Name = "txt_Total";
             this.txt_Total.Size = new System.Drawing.Size(199, 27);
             this.txt_Total.TabIndex = 1;
@@ -497,7 +497,7 @@
             this.list_SeatSelected.FormattingEnabled = true;
             this.list_SeatSelected.ItemHeight = 20;
             this.list_SeatSelected.Location = new System.Drawing.Point(120, 149);
-            this.list_SeatSelected.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.list_SeatSelected.Margin = new System.Windows.Forms.Padding(4);
             this.list_SeatSelected.MultiColumn = true;
             this.list_SeatSelected.Name = "list_SeatSelected";
             this.list_SeatSelected.Size = new System.Drawing.Size(301, 124);
@@ -596,6 +596,7 @@
             this.btn_Close.TabIndex = 3;
             this.btn_Close.Text = "Thoát";
             this.btn_Close.UseVisualStyleBackColor = true;
+            this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
             // 
             // BookingTicketsUI
             // 

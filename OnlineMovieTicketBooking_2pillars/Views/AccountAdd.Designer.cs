@@ -41,16 +41,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_AccountList = new System.Windows.Forms.DataGridView();
-            this.col_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_Add = new System.Windows.Forms.Button();
             this.btn_Permission = new System.Windows.Forms.Button();
             this.btn_Disable = new System.Windows.Forms.Button();
             this.btn_Back = new System.Windows.Forms.Button();
             this.err_Warning = new System.Windows.Forms.ErrorProvider(this.components);
+            this.col_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grb_AccountInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_AccountList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.err_Warning)).BeginInit();
@@ -166,7 +165,6 @@
             this.dgv_AccountList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_ID,
             this.col_Username,
-            this.col_Password,
             this.col_EmployeeName,
             this.col_Role});
             this.dgv_AccountList.Location = new System.Drawing.Point(460, 23);
@@ -177,41 +175,6 @@
             this.dgv_AccountList.Size = new System.Drawing.Size(571, 342);
             this.dgv_AccountList.TabIndex = 1;
             this.dgv_AccountList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_AccountList_CellClick);
-            // 
-            // col_ID
-            // 
-            this.col_ID.HeaderText = "Mã";
-            this.col_ID.MinimumWidth = 6;
-            this.col_ID.Name = "col_ID";
-            this.col_ID.ReadOnly = true;
-            // 
-            // col_Username
-            // 
-            this.col_Username.HeaderText = "Tên tài khoản";
-            this.col_Username.MinimumWidth = 6;
-            this.col_Username.Name = "col_Username";
-            this.col_Username.ReadOnly = true;
-            // 
-            // col_Password
-            // 
-            this.col_Password.HeaderText = "Mật khẩu";
-            this.col_Password.MinimumWidth = 6;
-            this.col_Password.Name = "col_Password";
-            this.col_Password.ReadOnly = true;
-            // 
-            // col_EmployeeName
-            // 
-            this.col_EmployeeName.HeaderText = "Tên nhân viên";
-            this.col_EmployeeName.MinimumWidth = 6;
-            this.col_EmployeeName.Name = "col_EmployeeName";
-            this.col_EmployeeName.ReadOnly = true;
-            // 
-            // col_Role
-            // 
-            this.col_Role.HeaderText = "Role";
-            this.col_Role.MinimumWidth = 6;
-            this.col_Role.Name = "col_Role";
-            this.col_Role.ReadOnly = true;
             // 
             // btn_Add
             // 
@@ -257,6 +220,34 @@
             // 
             this.err_Warning.ContainerControl = this;
             // 
+            // col_ID
+            // 
+            this.col_ID.HeaderText = "Mã";
+            this.col_ID.MinimumWidth = 6;
+            this.col_ID.Name = "col_ID";
+            this.col_ID.ReadOnly = true;
+            // 
+            // col_Username
+            // 
+            this.col_Username.HeaderText = "Tên tài khoản";
+            this.col_Username.MinimumWidth = 6;
+            this.col_Username.Name = "col_Username";
+            this.col_Username.ReadOnly = true;
+            // 
+            // col_EmployeeName
+            // 
+            this.col_EmployeeName.HeaderText = "Tên nhân viên";
+            this.col_EmployeeName.MinimumWidth = 6;
+            this.col_EmployeeName.Name = "col_EmployeeName";
+            this.col_EmployeeName.ReadOnly = true;
+            // 
+            // col_Role
+            // 
+            this.col_Role.HeaderText = "Role";
+            this.col_Role.MinimumWidth = 6;
+            this.col_Role.Name = "col_Role";
+            this.col_Role.ReadOnly = true;
+            // 
             // frm_AccountAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -296,11 +287,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btn_Back;
         private System.Windows.Forms.ComboBox cmb_Role;
+        private System.Windows.Forms.ErrorProvider err_Warning;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Username;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_Password;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_EmployeeName;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Role;
-        private System.Windows.Forms.ErrorProvider err_Warning;
     }
 }

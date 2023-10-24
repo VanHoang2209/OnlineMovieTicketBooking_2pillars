@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BCrypt;
+using BCrypt.Net;
 
 namespace OnlineMovieTicketBooking_2pillars.Views
 {
@@ -18,6 +20,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
         private List<Role> listRole = context.Roles.ToList();
         private List<Employee> listEmployee = context.Employees.ToList();
         private List<Account> listAccount = context.Accounts.ToList();
+        
         public frm_AccountAdd()
         {
             InitializeComponent();
@@ -34,9 +37,14 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                 int index = dgv_AccountList.Rows.Add();
                 dgv_AccountList.Rows[index].Cells[0].Value = item.ID;
                 dgv_AccountList.Rows[index].Cells[1].Value = item.Username;
-                dgv_AccountList.Rows[index].Cells[2].Value = item.Password;
-                dgv_AccountList.Rows[index].Cells[3].Value = item.Employee.FullName;
-                dgv_AccountList.Rows[index].Cells[4].Value = item.Role.Name;
+                dgv_AccountList.Rows[index].Cells[2].Value = item.Employee.FullName;
+                if (item.Role.ID == -1)
+                {
+                    dgv_AccountList.Rows[index].Cells[3].Value = item.Role.Name;
+                    dgv_AccountList.Rows[index].DefaultCellStyle.BackColor = Color.Red;
+                }
+                else
+                    dgv_AccountList.Rows[index].Cells[3].Value = item.Role.Name;
             }
         }
 
@@ -144,18 +152,18 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                             ID = int.Parse(txt_ID.Text),
                             RoleID = int.Parse(cmb_Role.SelectedValue.ToString()),
                             Username = txt_Username.Text,
-                            Password = txt_Password.Text,
-                            UserID = int.Parse(cmb_Employee.SelectedValue.ToString())
+                            Password = BCrypt.Net.BCrypt.HashPassword(txt_Password.Text),
+                        UserID = int.Parse(cmb_Employee.SelectedValue.ToString())
                         };
                         context.Accounts.Add(account);
                         context.SaveChanges();
                         MessageBox.Show("Thêm tài khoản thành công!");
+                        List<Account> listAccount = context.Accounts.Include("Role").ToList();
+                        BindGrid(listAccount);
                     }
                     else
                         MessageBox.Show("Mã tài khoản đã tồn tại!");
                 }
-                List<Account> listAccount = context.Accounts.Include("Role").ToList();
-                BindGrid(listAccount);
             }
             catch (Exception ex)
             {
@@ -174,12 +182,12 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                     existingAccount.RoleID = int.Parse(cmb_Role.SelectedValue.ToString());
                     context.SaveChanges();
                     MessageBox.Show("Cấp quyền thành công!");
+                    List<Account> listAccount = context.Accounts.Include("Role").ToList();
+                    BindGrid(listAccount);
                 }
                 else
                     MessageBox.Show("Mã tài khoản không tồn tại!");
             }
-            List<Account> listAccount = context.Accounts.Include("Role").ToList();
-            BindGrid(listAccount);
         }
 
         private void btn_Disable_Click(object sender, EventArgs e)
@@ -193,12 +201,13 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                     existingAccount.RoleID = -1;
                     context.SaveChanges();
                     MessageBox.Show("Vô hiệu hóa thành công!");
+                    List<Account> listAccount = context.Accounts.Include("Role").ToList();
+                    BindGrid(listAccount);
+                    cmb_Role.SelectedIndex = 1;
                 }
                 else
                     MessageBox.Show("Mã tài khoản không tồn tại!");
             }
-            List<Account> listAccount = context.Accounts.Include("Role").ToList();
-            BindGrid(listAccount);
         }
 
         private void btn_Back_Click(object sender, EventArgs e)
@@ -213,9 +222,8 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                 int index = e.RowIndex;
                 txt_ID.Text = dgv_AccountList.Rows[index].Cells[0].Value.ToString();
                 txt_Username.Text = dgv_AccountList.Rows[index].Cells[1].Value.ToString();
-                txt_Password.Text = dgv_AccountList.Rows[index].Cells[2].Value.ToString();
-                cmb_Employee.Text = dgv_AccountList.Rows[index].Cells[3].Value.ToString();
-                cmb_Role.Text = dgv_AccountList.Rows[index].Cells[4].Value.ToString();
+                cmb_Employee.Text = dgv_AccountList.Rows[index].Cells[2].Value.ToString();
+                cmb_Role.Text = dgv_AccountList.Rows[index].Cells[3].Value.ToString();
             }
         }
     }

@@ -17,7 +17,7 @@ namespace OnlineMovieTicketBooking_2pillars.Models
         public string Username { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [StringLength(500)]
         public string Password { get; set; }
 
         public int UserID { get; set; }
