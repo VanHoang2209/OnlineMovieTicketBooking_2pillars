@@ -9,6 +9,7 @@ namespace OnlineMovieTicketBooking_2pillars.Models
     {
         public MovieDBContext()
             : base("name=MovieDBContext14")
+            : base("name=MovieDBContext")
         {
         }
 
