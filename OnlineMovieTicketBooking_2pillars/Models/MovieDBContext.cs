@@ -8,6 +8,7 @@ namespace OnlineMovieTicketBooking_2pillars.Models
     public partial class MovieDBContext : DbContext
     {
         public MovieDBContext()
+            : base("name=MovieDBContext14")
             : base("name=MovieDBContext")
         {
         }

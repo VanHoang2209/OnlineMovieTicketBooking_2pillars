@@ -1,6 +1,6 @@
-﻿using OnlineMovieTicketBooking_2pillars.Models;
+﻿using System;
+using OnlineMovieTicketBooking_2pillars.Models;
 using OnlineMovieTicketBooking_2pillars.ViewModels;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,13 +25,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             InitializeComponent();
             this.bookingTicketsUI = bookingTicketsUI;
         }
-
-        private void InfoCustomer_Load(object sender, EventArgs e)
-        {
-            this.CenterToScreen();
-        }
-
-        private void btn_PayAway_Click(object sender, EventArgs e)
+        private void btn_Continue_Click(object sender, EventArgs e)
         {
             try
             {
@@ -44,17 +38,22 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                     Close();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
-        
+        private void InfoCustomer_Load(object sender, EventArgs e)
+        {
+            this.CenterToScreen();
+        }
+
+
         private bool InputChecked()
         {
             err_Warning.Clear();
 
-            if(string.IsNullOrEmpty(txt_Name.Text) && string.IsNullOrWhiteSpace(txt_Name.Text))
+            if (string.IsNullOrEmpty(txt_Name.Text) && string.IsNullOrWhiteSpace(txt_Name.Text))
             {
                 err_Warning.SetError(txt_Name, "Vui lòng nhập họ tên");
                 return false;

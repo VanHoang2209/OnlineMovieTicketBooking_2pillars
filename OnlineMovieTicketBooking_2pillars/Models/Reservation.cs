@@ -15,7 +15,6 @@ namespace OnlineMovieTicketBooking_2pillars.Models
             SeatDetails = new HashSet<SeatDetail>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ID { get; set; }
 
         public int CustomerID { get; set; }
