@@ -15,7 +15,6 @@ namespace OnlineMovieTicketBooking_2pillars.Models
             Reservations = new HashSet<Reservation>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int ID { get; set; }
 
         [Required]
