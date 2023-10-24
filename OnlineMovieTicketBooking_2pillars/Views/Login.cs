@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using OnlineMovieTicketBooking_2pillars.Models;
+using BCrypt;
+using BCrypt.Net;
 
 namespace OnlineMovieTicketBooking_2pillars.Views
 {
@@ -27,17 +29,17 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                 Account existingAccount = context.Accounts.FirstOrDefault(s => s.Username.Equals(txt_Username.Text));
                 if (existingAccount != null)
                 {
-                    if (existingAccount.Password == txt_Password.Text)
+                    bool isPasswordMatch = BCrypt.Net.BCrypt.Verify(txt_Password.Text, existingAccount.Password);
+                    if (isPasswordMatch)
                     {
                         if (existingAccount.RoleID == -1)
                             throw new Exception("Tài khoản đã bị vô hiệu!");
                         GlobalVariables.UserID = existingAccount.UserID;
                         GlobalVariables.UserRole = existingAccount.Role.ID;
                         GlobalVariables.AccountID = existingAccount.ID;
+                        this.Hide();
                         frm_EmployeeHome frm = new frm_EmployeeHome();
                         frm.ShowDialog();
-                        txt_Username.Text = string.Empty;
-                        txt_Password.Text = string.Empty;
                     }
                     else
                         throw new Exception("Tài khoản hoặc mật khẩu không đúng!");
@@ -59,6 +61,14 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             GlobalVariables.UserRole = -1;
             GlobalVariables.AccountID = -1;
             this.Close();
+            BookingTicketsUI bookingTicketsUI = new BookingTicketsUI();
+            bookingTicketsUI.Show();
+        }
+
+        private void frm_Login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            BookingTicketsUI bookingTicketsUI = new BookingTicketsUI();
+            bookingTicketsUI.Show();
         }
     }
 }

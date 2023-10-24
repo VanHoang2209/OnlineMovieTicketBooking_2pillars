@@ -32,6 +32,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             InitializeComponent();
             ControlSetting();
         }
+
         private void BookingTicketsUI_Load(object sender, EventArgs e)
         {
             try
@@ -348,6 +349,9 @@ namespace OnlineMovieTicketBooking_2pillars.Views
 
         private bool InputChecked()
         {
+            this.Hide();
+            frm_Login frm_Login = new frm_Login();
+            frm_Login.Show();
             err_Warning.Clear();
             if (string.IsNullOrEmpty(txt_MovieTitle.Text) && string.IsNullOrWhiteSpace(txt_MovieTitle.Text))
             {
@@ -374,6 +378,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
 
         private void btn_Close_Click(object sender, EventArgs e)
         {
+            Application.Exit();
             this.Close();
         }
     }

@@ -24,7 +24,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
 
         private void btn_Logout_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Restart();
         }
 
         private void btn_MovieAdd_Click(object sender, EventArgs e)
