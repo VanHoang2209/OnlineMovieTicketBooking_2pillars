@@ -325,18 +325,6 @@
             this.label14.TabIndex = 2;
             this.label14.Text = "Thành tiền: ";
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1400, 582);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 37);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Tiếp tục";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -587,7 +575,6 @@
             this.btn_Close.Text = "Thoát";
             this.btn_Close.UseVisualStyleBackColor = true;
             this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
-
             // 
             // err_Warning
             // 
@@ -603,7 +590,6 @@
             this.btn_Continue.TabIndex = 3;
             this.btn_Continue.Text = "Tiếp tục ";
             this.btn_Continue.UseVisualStyleBackColor = true;
-            this.btn_Continue.Click += new System.EventHandler(this.btn_Close_Click);
             // 
             // BookingTicketsUI
             // 

@@ -422,6 +422,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             Application.Exit();
             this.Close();
         }
+
     }
 }
 

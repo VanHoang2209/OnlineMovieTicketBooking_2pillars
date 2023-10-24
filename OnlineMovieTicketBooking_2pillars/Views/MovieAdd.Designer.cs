@@ -52,18 +52,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 103);
+            this.label1.Location = new System.Drawing.Point(17, 113);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 22);
+            this.label1.Size = new System.Drawing.Size(69, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên phim";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(40, 170);
+            this.label3.Location = new System.Drawing.Point(30, 138);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 22);
+            this.label3.Size = new System.Drawing.Size(0, 18);
             this.label3.TabIndex = 2;
             // 
             // dgv_MovieList
@@ -76,12 +78,13 @@
             this.col_MovieID,
             this.col_MovieName,
             this.col_Username});
-            this.dgv_MovieList.Location = new System.Drawing.Point(518, 46);
+            this.dgv_MovieList.Location = new System.Drawing.Point(388, 37);
+            this.dgv_MovieList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgv_MovieList.Name = "dgv_MovieList";
             this.dgv_MovieList.ReadOnly = true;
             this.dgv_MovieList.RowHeadersWidth = 51;
             this.dgv_MovieList.RowTemplate.Height = 24;
-            this.dgv_MovieList.Size = new System.Drawing.Size(535, 291);
+            this.dgv_MovieList.Size = new System.Drawing.Size(401, 248);
             this.dgv_MovieList.TabIndex = 6;
             this.dgv_MovieList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_MovieList_CellClick);
             // 
@@ -114,41 +117,48 @@
             this.grb_MovieInfo.Controls.Add(this.label3);
             this.grb_MovieInfo.Controls.Add(this.label1);
             this.grb_MovieInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grb_MovieInfo.Location = new System.Drawing.Point(28, 65);
+            this.grb_MovieInfo.Location = new System.Drawing.Point(21, 62);
+            this.grb_MovieInfo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grb_MovieInfo.Name = "grb_MovieInfo";
-            this.grb_MovieInfo.Size = new System.Drawing.Size(459, 150);
+            this.grb_MovieInfo.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grb_MovieInfo.Size = new System.Drawing.Size(344, 166);
             this.grb_MovieInfo.TabIndex = 4;
             this.grb_MovieInfo.TabStop = false;
             this.grb_MovieInfo.Text = "Thông tin phim";
             // 
             // txt_MovieID
             // 
-            this.txt_MovieID.Location = new System.Drawing.Point(140, 45);
+            this.txt_MovieID.Location = new System.Drawing.Point(106, 50);
+            this.txt_MovieID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_MovieID.Name = "txt_MovieID";
-            this.txt_MovieID.Size = new System.Drawing.Size(125, 28);
+            this.txt_MovieID.Size = new System.Drawing.Size(188, 24);
             this.txt_MovieID.TabIndex = 0;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 48);
+            this.label4.Location = new System.Drawing.Point(17, 52);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 22);
+            this.label4.Size = new System.Drawing.Size(65, 18);
             this.label4.TabIndex = 5;
             this.label4.Text = "Mã phim";
             // 
             // txt_MovieName
             // 
-            this.txt_MovieName.Location = new System.Drawing.Point(140, 97);
+            this.txt_MovieName.Location = new System.Drawing.Point(106, 107);
+            this.txt_MovieName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_MovieName.Name = "txt_MovieName";
-            this.txt_MovieName.Size = new System.Drawing.Size(250, 28);
+            this.txt_MovieName.Size = new System.Drawing.Size(188, 24);
             this.txt_MovieName.TabIndex = 1;
             // 
             // btn_Back
             // 
-            this.btn_Back.Location = new System.Drawing.Point(392, 252);
+            this.btn_Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Back.Location = new System.Drawing.Point(294, 244);
+            this.btn_Back.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Back.Name = "btn_Back";
-            this.btn_Back.Size = new System.Drawing.Size(95, 50);
+            this.btn_Back.Size = new System.Drawing.Size(71, 41);
             this.btn_Back.TabIndex = 5;
             this.btn_Back.Text = "Quay lại";
             this.btn_Back.UseVisualStyleBackColor = true;
@@ -156,9 +166,11 @@
             // 
             // btn_Add
             // 
-            this.btn_Add.Location = new System.Drawing.Point(40, 252);
+            this.btn_Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Add.Location = new System.Drawing.Point(31, 244);
+            this.btn_Add.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Add.Name = "btn_Add";
-            this.btn_Add.Size = new System.Drawing.Size(95, 50);
+            this.btn_Add.Size = new System.Drawing.Size(71, 41);
             this.btn_Add.TabIndex = 2;
             this.btn_Add.Text = "Thêm";
             this.btn_Add.UseVisualStyleBackColor = true;
@@ -166,9 +178,11 @@
             // 
             // btn_Update
             // 
-            this.btn_Update.Location = new System.Drawing.Point(156, 252);
+            this.btn_Update.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Update.Location = new System.Drawing.Point(115, 244);
+            this.btn_Update.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Update.Name = "btn_Update";
-            this.btn_Update.Size = new System.Drawing.Size(95, 50);
+            this.btn_Update.Size = new System.Drawing.Size(71, 41);
             this.btn_Update.TabIndex = 3;
             this.btn_Update.Text = "Sửa";
             this.btn_Update.UseVisualStyleBackColor = true;
@@ -176,9 +190,11 @@
             // 
             // btn_Delete
             // 
-            this.btn_Delete.Location = new System.Drawing.Point(275, 252);
+            this.btn_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Delete.Location = new System.Drawing.Point(204, 244);
+            this.btn_Delete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(95, 50);
+            this.btn_Delete.Size = new System.Drawing.Size(71, 41);
             this.btn_Delete.TabIndex = 4;
             this.btn_Delete.Text = "Xóa";
             this.btn_Delete.UseVisualStyleBackColor = true;
@@ -190,15 +206,16 @@
             // 
             // frm_MovieAdd
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1072, 354);
+            this.ClientSize = new System.Drawing.Size(804, 309);
             this.Controls.Add(this.btn_Delete);
             this.Controls.Add(this.btn_Update);
             this.Controls.Add(this.btn_Add);
             this.Controls.Add(this.btn_Back);
             this.Controls.Add(this.grb_MovieInfo);
             this.Controls.Add(this.dgv_MovieList);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "frm_MovieAdd";
             this.Text = "THÊM PHIM";

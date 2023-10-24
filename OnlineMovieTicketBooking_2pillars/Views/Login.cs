@@ -70,5 +70,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             BookingTicketsUI bookingTicketsUI = new BookingTicketsUI();
             bookingTicketsUI.Show();
         }
+
+
     }
 }

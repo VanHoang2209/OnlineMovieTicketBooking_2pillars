@@ -56,5 +56,6 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             frm_PasswordChange frm_PasswordChange = new frm_PasswordChange();
             frm_PasswordChange.ShowDialog();
         }
+
     }
 }
