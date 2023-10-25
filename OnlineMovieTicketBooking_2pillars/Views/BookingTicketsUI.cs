@@ -1,19 +1,23 @@
 ﻿using OnlineMovieTicketBooking_2pillars.Models;
 using OnlineMovieTicketBooking_2pillars.ViewModels;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Windows.Forms;
 
 namespace OnlineMovieTicketBooking_2pillars.Views
 {
     public partial class BookingTicketsUI : Form
     {
-        decimal total = 0;
         private BookingInfo bookingInfo;
         private ScheduledMovie scheduledMovie;
         private Customer customer;
+        private Reservation reservation;
+        private decimal total = 0;
+        private bool isBookingSucessful = false;
 
         public BookingTicketsUI()
         {
@@ -372,6 +376,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                             dbContext.SaveChanges();
 
                             MessageBox.Show("Đặt vé thành công!");
+                            isBookingSucessful = true;
                             DefaultSetting();
                             UpdateButtonState();
                         }
@@ -389,9 +394,9 @@ namespace OnlineMovieTicketBooking_2pillars.Views
         #region "Input Checked"
         private bool InputChecked()
         {
-            this.Hide();
-            frm_Login frm_Login = new frm_Login();
-            frm_Login.Show();
+            //this.Hide();
+            //frm_Login frm_Login = new frm_Login();
+            //frm_Login.Show();
             err_Warning.Clear();
             if (string.IsNullOrEmpty(txt_MovieTitle.Text) && string.IsNullOrWhiteSpace(txt_MovieTitle.Text))
             {
@@ -423,6 +428,26 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             this.Close();
         }
 
+        private void btn_Continue_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Đặt vé thành công rồi mới được tiếp tục
+                if(isBookingSucessful == true)
+                {
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Hãy nhập đầy đủ thông tin trước khi in vé");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
+        }
     }
 }
 

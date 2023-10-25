@@ -150,7 +150,7 @@
             // btn_Continue
             // 
             this.btn_Continue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Continue.Location = new System.Drawing.Point(164, 318);
+            this.btn_Continue.Location = new System.Drawing.Point(165, 318);
             this.btn_Continue.Name = "btn_Continue";
             this.btn_Continue.Size = new System.Drawing.Size(107, 37);
             this.btn_Continue.TabIndex = 4;
