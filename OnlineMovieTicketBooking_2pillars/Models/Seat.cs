@@ -24,10 +24,6 @@ namespace OnlineMovieTicketBooking_2pillars.Models
 
         public decimal Price { get; set; }
 
-        public int SeatTypeID { get; set; }
-
-        public virtual SeatType SeatType { get; set; }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SeatDetail> SeatDetails { get; set; }
     }

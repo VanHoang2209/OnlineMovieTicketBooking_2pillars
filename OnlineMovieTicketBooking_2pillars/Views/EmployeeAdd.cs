@@ -15,10 +15,21 @@ namespace OnlineMovieTicketBooking_2pillars.Views
     {
         private static MovieDBContext context = new MovieDBContext();
         private List<Employee> listEmployee = context.Employees.ToList();
+        private List<Position> listPosition = context.Positions.ToList();
         public frm_EmployeeAdd()
         {
             InitializeComponent();
+            FillPositionCombobox();
             BindGrid(listEmployee);
+        }
+
+        private void FillPositionCombobox()
+        {
+            listPosition.Insert(0, new Position());
+            this.cmb_Position.DataSource = listPosition;
+            this.cmb_Position.DisplayMember = "Name";
+            this.cmb_Position.ValueMember = "ID";
+            this.cmb_Position.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void BindGrid(List<Employee> listEmployee)
@@ -30,6 +41,13 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                 dgv_EmployeeList.Rows[index].Cells[0].Value = item.ID;
                 dgv_EmployeeList.Rows[index].Cells[1].Value = item.FullName;
                 dgv_EmployeeList.Rows[index].Cells[2].Value = item.Phone;
+                if (item.Position.ID == -1)
+                {
+                    dgv_EmployeeList.Rows[index].Cells[3].Value = item.Position.Name;
+                    dgv_EmployeeList.Rows[index].DefaultCellStyle.BackColor = Color.Red;
+                }
+                else
+                    dgv_EmployeeList.Rows[index].Cells[3].Value = item.Position.Name;
             }
         }
 
@@ -45,7 +63,8 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                     {
                         ID = int.Parse(txt_ID.Text),
                         FullName = txt_FullName.Text,
-                        Phone = txt_Phone.Text
+                        Phone = txt_Phone.Text,
+                        PosID = int.Parse(cmb_Position.SelectedValue.ToString())
                     };
                     context.Employees.Add(employee);
                     context.SaveChanges();
@@ -81,6 +100,11 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                 err_Warning.SetError(txt_Phone, "Số điện thoại không được để trống!");
                 return false;
             }
+            if (cmb_Position.SelectedIndex == 0)
+            {
+                err_Warning.SetError(cmb_Position, "Vui lòng chọn chức vụ!");
+                return false;
+            }
             return true;
         }
 
@@ -89,7 +113,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             err_Warning.Clear();
             if (string.IsNullOrEmpty(txt_ID.Text))
             {
-                err_Warning.SetError(txt_ID, "Mã lịch chiếu không được để trống!");
+                err_Warning.SetError(txt_ID, "Mã nhân viên không được để trống!");
                 return false;
             }
             return true;
@@ -105,6 +129,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                 {
                     existingEmployee.FullName = txt_FullName.Text;
                     existingEmployee.Phone = txt_Phone.Text;
+                    existingEmployee.PosID = int.Parse(cmb_Position.SelectedValue.ToString());
                     context.SaveChanges();
                     MessageBox.Show("Sửa thông tin thành công!");
                 }
@@ -115,7 +140,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             BindGrid(listEmployee);
         }
 
-        private void btn_Delete_Click(object sender, EventArgs e)
+        private void btn_Disable_Click(object sender, EventArgs e)
         {
             if (CheckInput2())
             {
@@ -123,19 +148,16 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                 Employee existingEmployee = context.Employees.FirstOrDefault(s => s.ID == id);
                 if (existingEmployee != null)
                 {
-                    DialogResult dr = MessageBox.Show("Bạn có muốn xóa không?", "CẢNH BÁO", MessageBoxButtons.YesNo);
-                    if (dr == DialogResult.Yes)
-                    {
-                        context.Employees.Remove(existingEmployee);
-                        context.SaveChanges();
-                        MessageBox.Show("Xóa thông tin thành công!");
-                    }
+                    existingEmployee.PosID = -1;
+                    context.SaveChanges();
+                    MessageBox.Show("Vô hiệu thành công!");
+                    List<Employee> listEmployee = context.Employees.Include("Position").ToList();
+                    BindGrid(listEmployee);
+                    cmb_Position.SelectedIndex = 1;
                 }
                 else
                     MessageBox.Show("Mã nhân viên không tồn tại!");
             }
-            List<Employee> listEmployee = context.Employees.ToList();
-            BindGrid(listEmployee);
         }
 
         private void dgv_EmployeeList_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -146,6 +168,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                 txt_ID.Text = dgv_EmployeeList.Rows[index].Cells[0].Value.ToString();
                 txt_FullName.Text = dgv_EmployeeList.Rows[index].Cells[1].Value.ToString();
                 txt_Phone.Text = dgv_EmployeeList.Rows[index].Cells[2].Value.ToString();
+                cmb_Position.Text = dgv_EmployeeList.Rows[index].Cells[3].Value.ToString();
             }
         }
 

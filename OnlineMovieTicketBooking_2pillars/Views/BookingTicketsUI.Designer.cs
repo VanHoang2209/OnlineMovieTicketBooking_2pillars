@@ -144,9 +144,9 @@
             this.groupBox_GhiChu.Controls.Add(this.pictureBox28);
             this.groupBox_GhiChu.Controls.Add(this.pictureBox26);
             this.groupBox_GhiChu.Location = new System.Drawing.Point(764, 85);
-            this.groupBox_GhiChu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox_GhiChu.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox_GhiChu.Name = "groupBox_GhiChu";
-            this.groupBox_GhiChu.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox_GhiChu.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox_GhiChu.Size = new System.Drawing.Size(301, 422);
             this.groupBox_GhiChu.TabIndex = 3;
             this.groupBox_GhiChu.TabStop = false;
@@ -245,7 +245,7 @@
             this.pictureBox31.BackColor = System.Drawing.Color.Aqua;
             this.pictureBox31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox31.Location = new System.Drawing.Point(21, 358);
-            this.pictureBox31.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox31.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox31.Name = "pictureBox31";
             this.pictureBox31.Size = new System.Drawing.Size(137, 36);
             this.pictureBox31.TabIndex = 1;
@@ -256,7 +256,7 @@
             this.pictureBox30.BackColor = System.Drawing.Color.Gray;
             this.pictureBox30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox30.Location = new System.Drawing.Point(21, 297);
-            this.pictureBox30.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox30.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox30.Name = "pictureBox30";
             this.pictureBox30.Size = new System.Drawing.Size(71, 36);
             this.pictureBox30.TabIndex = 1;
@@ -267,7 +267,7 @@
             this.pictureBox28.BackColor = System.Drawing.Color.Red;
             this.pictureBox28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox28.Location = new System.Drawing.Point(21, 239);
-            this.pictureBox28.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox28.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox28.Name = "pictureBox28";
             this.pictureBox28.Size = new System.Drawing.Size(71, 36);
             this.pictureBox28.TabIndex = 1;
@@ -278,7 +278,7 @@
             this.pictureBox26.BackColor = System.Drawing.Color.Yellow;
             this.pictureBox26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox26.Location = new System.Drawing.Point(21, 180);
-            this.pictureBox26.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox26.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox26.Name = "pictureBox26";
             this.pictureBox26.Size = new System.Drawing.Size(71, 36);
             this.pictureBox26.TabIndex = 1;
@@ -373,6 +373,7 @@
             this.đăngNhậpToolStripMenuItem1.Name = "đăngNhậpToolStripMenuItem1";
             this.đăngNhậpToolStripMenuItem1.Size = new System.Drawing.Size(272, 28);
             this.đăngNhậpToolStripMenuItem1.Text = "Đăng nhập ";
+            this.đăngNhậpToolStripMenuItem1.Click += new System.EventHandler(this.đăngNhậpToolStripMenuItem1_Click);
             // 
             // thôngTinKháchĐãĐặtToolStripMenuItem
             // 
@@ -428,7 +429,7 @@
             this.txt_Total.Enabled = false;
             this.txt_Total.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Total.Location = new System.Drawing.Point(120, 289);
-            this.txt_Total.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_Total.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Total.Name = "txt_Total";
             this.txt_Total.Size = new System.Drawing.Size(216, 29);
             this.txt_Total.TabIndex = 1;
@@ -489,7 +490,7 @@
             this.list_SeatSelected.FormattingEnabled = true;
             this.list_SeatSelected.ItemHeight = 24;
             this.list_SeatSelected.Location = new System.Drawing.Point(120, 149);
-            this.list_SeatSelected.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.list_SeatSelected.Margin = new System.Windows.Forms.Padding(4);
             this.list_SeatSelected.MultiColumn = true;
             this.list_SeatSelected.Name = "list_SeatSelected";
             this.list_SeatSelected.Size = new System.Drawing.Size(285, 124);
