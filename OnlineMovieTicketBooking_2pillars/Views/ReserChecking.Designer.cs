@@ -34,6 +34,7 @@
             this.col_MovieName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,20 +52,21 @@
             this.col_MovieName,
             this.col_Date,
             this.col_Time,
+            this.col_TotalPrice,
             this.col_CustomerName,
             this.col_Phone,
             this.col_Email});
-            this.dgv_ReserList.Location = new System.Drawing.Point(2, 3);
+            this.dgv_ReserList.Location = new System.Drawing.Point(-1, -1);
             this.dgv_ReserList.Name = "dgv_ReserList";
             this.dgv_ReserList.ReadOnly = true;
             this.dgv_ReserList.RowHeadersWidth = 51;
             this.dgv_ReserList.RowTemplate.Height = 24;
-            this.dgv_ReserList.Size = new System.Drawing.Size(797, 448);
+            this.dgv_ReserList.Size = new System.Drawing.Size(1271, 618);
             this.dgv_ReserList.TabIndex = 0;
             // 
             // btn_Back
             // 
-            this.btn_Back.Location = new System.Drawing.Point(698, 458);
+            this.btn_Back.Location = new System.Drawing.Point(1183, 623);
             this.btn_Back.Name = "btn_Back";
             this.btn_Back.Size = new System.Drawing.Size(75, 38);
             this.btn_Back.TabIndex = 1;
@@ -100,6 +102,13 @@
             this.col_Time.Name = "col_Time";
             this.col_Time.ReadOnly = true;
             // 
+            // col_TotalPrice
+            // 
+            this.col_TotalPrice.HeaderText = "Tổng tiền";
+            this.col_TotalPrice.MinimumWidth = 6;
+            this.col_TotalPrice.Name = "col_TotalPrice";
+            this.col_TotalPrice.ReadOnly = true;
+            // 
             // col_CustomerName
             // 
             this.col_CustomerName.HeaderText = "Tên khách hàng";
@@ -125,7 +134,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 508);
+            this.ClientSize = new System.Drawing.Size(1270, 673);
             this.Controls.Add(this.btn_Back);
             this.Controls.Add(this.dgv_ReserList);
             this.Name = "frm_ReserChecking";
@@ -143,6 +152,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_MovieName;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Time;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_TotalPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_CustomerName;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Email;
