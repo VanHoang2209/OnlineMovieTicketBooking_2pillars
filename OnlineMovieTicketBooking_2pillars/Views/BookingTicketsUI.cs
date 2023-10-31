@@ -448,6 +448,13 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             }
            
         }
+
+        private void đăngNhậpToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frm_Login frm = new frm_Login();
+            frm.Show();
+        }
     }
 }
 

@@ -8,7 +8,7 @@ namespace OnlineMovieTicketBooking_2pillars.Models
     public partial class MovieDBContext : DbContext
     {
         public MovieDBContext()
-            : base("name=MovieDBContext1")
+            : base("name=MovieDBContext")
         {
         }
 
@@ -16,12 +16,12 @@ namespace OnlineMovieTicketBooking_2pillars.Models
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Movie> Movies { get; set; }
+        public virtual DbSet<Position> Positions { get; set; }
         public virtual DbSet<Reservation> Reservations { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<ScheduledMovie> ScheduledMovies { get; set; }
         public virtual DbSet<Seat> Seats { get; set; }
         public virtual DbSet<SeatDetail> SeatDetails { get; set; }
-        public virtual DbSet<SeatType> SeatTypes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -60,6 +60,12 @@ namespace OnlineMovieTicketBooking_2pillars.Models
             modelBuilder.Entity<Movie>()
                 .HasMany(e => e.ScheduledMovies)
                 .WithRequired(e => e.Movie)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Position>()
+                .HasMany(e => e.Employees)
+                .WithRequired(e => e.Position)
+                .HasForeignKey(e => e.PosID)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Reservation>()
@@ -101,11 +107,6 @@ namespace OnlineMovieTicketBooking_2pillars.Models
             modelBuilder.Entity<Seat>()
                 .HasMany(e => e.SeatDetails)
                 .WithRequired(e => e.Seat)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<SeatType>()
-                .HasMany(e => e.Seats)
-                .WithRequired(e => e.SeatType)
                 .WillCascadeOnDelete(false);
         }
     }

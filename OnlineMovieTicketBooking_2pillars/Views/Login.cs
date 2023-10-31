@@ -60,17 +60,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             GlobalVariables.UserID = -1;
             GlobalVariables.UserRole = -1;
             GlobalVariables.AccountID = -1;
-            this.Close();
-            BookingTicketsUI bookingTicketsUI = new BookingTicketsUI();
-            bookingTicketsUI.Show();
+            Application.Restart();
         }
-
-        private void frm_Login_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            BookingTicketsUI bookingTicketsUI = new BookingTicketsUI();
-            bookingTicketsUI.Show();
-        }
-
-
     }
 }

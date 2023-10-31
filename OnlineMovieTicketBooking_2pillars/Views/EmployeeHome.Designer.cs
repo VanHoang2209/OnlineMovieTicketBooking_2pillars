@@ -34,15 +34,16 @@
             this.btn_EmployeeAdd = new System.Windows.Forms.Button();
             this.btn_AccountAdd = new System.Windows.Forms.Button();
             this.btn_PasswordChange = new System.Windows.Forms.Button();
+            this.btn_Check = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_MovieAdd
             // 
             this.btn_MovieAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_MovieAdd.Location = new System.Drawing.Point(18, 35);
-            this.btn_MovieAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_MovieAdd.Location = new System.Drawing.Point(24, 43);
+            this.btn_MovieAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_MovieAdd.Name = "btn_MovieAdd";
-            this.btn_MovieAdd.Size = new System.Drawing.Size(105, 78);
+            this.btn_MovieAdd.Size = new System.Drawing.Size(140, 96);
             this.btn_MovieAdd.TabIndex = 0;
             this.btn_MovieAdd.Text = "Quản lý phim";
             this.btn_MovieAdd.UseVisualStyleBackColor = true;
@@ -51,10 +52,10 @@
             // btn_Logout
             // 
             this.btn_Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Logout.Location = new System.Drawing.Point(297, 150);
-            this.btn_Logout.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Logout.Location = new System.Drawing.Point(396, 185);
+            this.btn_Logout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Logout.Name = "btn_Logout";
-            this.btn_Logout.Size = new System.Drawing.Size(107, 77);
+            this.btn_Logout.Size = new System.Drawing.Size(143, 95);
             this.btn_Logout.TabIndex = 1;
             this.btn_Logout.Text = "Đăng xuất";
             this.btn_Logout.UseVisualStyleBackColor = true;
@@ -63,10 +64,10 @@
             // btn_AddSchedule
             // 
             this.btn_AddSchedule.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AddSchedule.Location = new System.Drawing.Point(155, 35);
-            this.btn_AddSchedule.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_AddSchedule.Location = new System.Drawing.Point(207, 43);
+            this.btn_AddSchedule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_AddSchedule.Name = "btn_AddSchedule";
-            this.btn_AddSchedule.Size = new System.Drawing.Size(109, 78);
+            this.btn_AddSchedule.Size = new System.Drawing.Size(145, 96);
             this.btn_AddSchedule.TabIndex = 2;
             this.btn_AddSchedule.Text = "Quản lý lịch chiếu";
             this.btn_AddSchedule.UseVisualStyleBackColor = true;
@@ -75,10 +76,10 @@
             // btn_EmployeeAdd
             // 
             this.btn_EmployeeAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_EmployeeAdd.Location = new System.Drawing.Point(18, 150);
-            this.btn_EmployeeAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_EmployeeAdd.Location = new System.Drawing.Point(24, 185);
+            this.btn_EmployeeAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_EmployeeAdd.Name = "btn_EmployeeAdd";
-            this.btn_EmployeeAdd.Size = new System.Drawing.Size(105, 77);
+            this.btn_EmployeeAdd.Size = new System.Drawing.Size(140, 95);
             this.btn_EmployeeAdd.TabIndex = 3;
             this.btn_EmployeeAdd.Text = "Quản lý nhân viên";
             this.btn_EmployeeAdd.UseVisualStyleBackColor = true;
@@ -87,10 +88,10 @@
             // btn_AccountAdd
             // 
             this.btn_AccountAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AccountAdd.Location = new System.Drawing.Point(155, 150);
-            this.btn_AccountAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_AccountAdd.Location = new System.Drawing.Point(207, 185);
+            this.btn_AccountAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_AccountAdd.Name = "btn_AccountAdd";
-            this.btn_AccountAdd.Size = new System.Drawing.Size(109, 77);
+            this.btn_AccountAdd.Size = new System.Drawing.Size(145, 95);
             this.btn_AccountAdd.TabIndex = 4;
             this.btn_AccountAdd.Text = "Quản lý tài khoản";
             this.btn_AccountAdd.UseVisualStyleBackColor = true;
@@ -99,27 +100,38 @@
             // btn_PasswordChange
             // 
             this.btn_PasswordChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_PasswordChange.Location = new System.Drawing.Point(297, 35);
-            this.btn_PasswordChange.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_PasswordChange.Location = new System.Drawing.Point(396, 43);
+            this.btn_PasswordChange.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_PasswordChange.Name = "btn_PasswordChange";
-            this.btn_PasswordChange.Size = new System.Drawing.Size(107, 78);
+            this.btn_PasswordChange.Size = new System.Drawing.Size(143, 96);
             this.btn_PasswordChange.TabIndex = 5;
             this.btn_PasswordChange.Text = "Đổi mật khẩu";
             this.btn_PasswordChange.UseVisualStyleBackColor = true;
             this.btn_PasswordChange.Click += new System.EventHandler(this.btn_PasswordChange_Click);
             // 
+            // btn_Check
+            // 
+            this.btn_Check.Location = new System.Drawing.Point(207, 314);
+            this.btn_Check.Name = "btn_Check";
+            this.btn_Check.Size = new System.Drawing.Size(145, 85);
+            this.btn_Check.TabIndex = 6;
+            this.btn_Check.Text = "Kiểm tra vé";
+            this.btn_Check.UseVisualStyleBackColor = true;
+            this.btn_Check.Click += new System.EventHandler(this.btn_Check_Click);
+            // 
             // frm_EmployeeHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(425, 253);
+            this.ClientSize = new System.Drawing.Size(567, 411);
+            this.Controls.Add(this.btn_Check);
             this.Controls.Add(this.btn_PasswordChange);
             this.Controls.Add(this.btn_AccountAdd);
             this.Controls.Add(this.btn_EmployeeAdd);
             this.Controls.Add(this.btn_AddSchedule);
             this.Controls.Add(this.btn_Logout);
             this.Controls.Add(this.btn_MovieAdd);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frm_EmployeeHome";
             this.Text = "TRANG NHÂN VIÊN";
             this.ResumeLayout(false);
@@ -134,5 +146,6 @@
         private System.Windows.Forms.Button btn_EmployeeAdd;
         private System.Windows.Forms.Button btn_AccountAdd;
         private System.Windows.Forms.Button btn_PasswordChange;
+        private System.Windows.Forms.Button btn_Check;
     }
 }
