@@ -226,5 +226,10 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                 cmb_Role.Text = dgv_AccountList.Rows[index].Cells[3].Value.ToString();
             }
         }
+
+        private void frm_AccountAdd_Load(object sender, EventArgs e)
+        {
+            this.CenterToScreen();
+        }
     }
 }

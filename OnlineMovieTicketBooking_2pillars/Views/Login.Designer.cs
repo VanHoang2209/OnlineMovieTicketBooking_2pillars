@@ -40,58 +40,59 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(157, 24);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(160, 30);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 29);
+            this.label1.Size = new System.Drawing.Size(221, 39);
             this.label1.TabIndex = 4;
             this.label1.Text = "ĐĂNG NHẬP";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(44, 84);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(50, 133);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 18);
+            this.label2.Size = new System.Drawing.Size(81, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "Tài khoản";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(44, 141);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(54, 197);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 18);
+            this.label3.Size = new System.Drawing.Size(77, 20);
             this.label3.TabIndex = 6;
             this.label3.Text = "Mật khẩu";
             // 
             // txt_Username
             // 
-            this.txt_Username.Location = new System.Drawing.Point(135, 84);
-            this.txt_Username.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_Username.Location = new System.Drawing.Point(167, 126);
+            this.txt_Username.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txt_Username.Name = "txt_Username";
-            this.txt_Username.Size = new System.Drawing.Size(197, 20);
-            this.txt_Username.TabIndex = 0;
+            this.txt_Username.Size = new System.Drawing.Size(325, 27);
+            this.txt_Username.TabIndex = 1;
             // 
             // txt_Password
             // 
-            this.txt_Password.Location = new System.Drawing.Point(135, 141);
-            this.txt_Password.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_Password.Location = new System.Drawing.Point(167, 197);
+            this.txt_Password.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.txt_Password.Name = "txt_Password";
-            this.txt_Password.Size = new System.Drawing.Size(197, 20);
-            this.txt_Password.TabIndex = 1;
+            this.txt_Password.Size = new System.Drawing.Size(325, 27);
+            this.txt_Password.TabIndex = 2;
             // 
             // btn_Back
             // 
-            this.btn_Back.Location = new System.Drawing.Point(335, 196);
-            this.btn_Back.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Back.Location = new System.Drawing.Point(242, 278);
+            this.btn_Back.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btn_Back.Name = "btn_Back";
-            this.btn_Back.Size = new System.Drawing.Size(71, 43);
+            this.btn_Back.Size = new System.Drawing.Size(112, 50);
             this.btn_Back.TabIndex = 3;
             this.btn_Back.Text = "Quay lại";
             this.btn_Back.UseVisualStyleBackColor = true;
@@ -99,20 +100,21 @@
             // 
             // btn_Login
             // 
-            this.btn_Login.Location = new System.Drawing.Point(234, 196);
-            this.btn_Login.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Login.Location = new System.Drawing.Point(381, 278);
+            this.btn_Login.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btn_Login.Name = "btn_Login";
-            this.btn_Login.Size = new System.Drawing.Size(75, 43);
-            this.btn_Login.TabIndex = 2;
+            this.btn_Login.Size = new System.Drawing.Size(111, 50);
+            this.btn_Login.TabIndex = 4;
             this.btn_Login.Text = "Đăng nhập";
             this.btn_Login.UseVisualStyleBackColor = true;
             this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
             // 
             // frm_Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(452, 265);
+            this.ClientSize = new System.Drawing.Size(522, 352);
             this.Controls.Add(this.btn_Login);
             this.Controls.Add(this.btn_Back);
             this.Controls.Add(this.txt_Password);
@@ -120,10 +122,12 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.MaximizeBox = false;
             this.Name = "frm_Login";
-            this.Text = "ĐĂNG NHẬP";
+            this.Text = "Login";
+            this.Load += new System.EventHandler(this.frm_Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

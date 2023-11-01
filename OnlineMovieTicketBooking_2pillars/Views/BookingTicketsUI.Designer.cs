@@ -51,11 +51,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.đăngNhậpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.đăngNhậpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.thôngTinKháchĐãĐặtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItem_Login = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label15 = new System.Windows.Forms.Label();
             this.cmb_MovieTitle = new System.Windows.Forms.ComboBox();
             this.cmb_ShowTime = new System.Windows.Forms.ComboBox();
@@ -74,7 +71,8 @@
             this.label17 = new System.Windows.Forms.Label();
             this.btn_Close = new System.Windows.Forms.Button();
             this.err_Warning = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btn_Continue = new System.Windows.Forms.Button();
+            this.btn_PayAway = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.pnl_ListSeat.SuspendLayout();
             this.groupBox_GhiChu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).BeginInit();
@@ -113,7 +111,7 @@
             // 
             // pnl_ListSeat
             // 
-            this.pnl_ListSeat.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.pnl_ListSeat.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.pnl_ListSeat.Controls.Add(this.groupBox_GhiChu);
             this.pnl_ListSeat.Controls.Add(this.label3);
             this.pnl_ListSeat.Controls.Add(this.label1);
@@ -121,10 +119,10 @@
             this.pnl_ListSeat.Controls.Add(this.label5);
             this.pnl_ListSeat.Controls.Add(this.label4);
             this.pnl_ListSeat.Controls.Add(this.textBox1);
-            this.pnl_ListSeat.Location = new System.Drawing.Point(464, 46);
+            this.pnl_ListSeat.Location = new System.Drawing.Point(447, 137);
             this.pnl_ListSeat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnl_ListSeat.Name = "pnl_ListSeat";
-            this.pnl_ListSeat.Size = new System.Drawing.Size(1084, 532);
+            this.pnl_ListSeat.Size = new System.Drawing.Size(1085, 532);
             this.pnl_ListSeat.TabIndex = 0;
             this.pnl_ListSeat.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_ListSeat_Paint);
             // 
@@ -348,49 +346,28 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.đăngNhậpToolStripMenuItem});
+            this.menuItem_Login});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1569, 31);
+            this.menuStrip1.Size = new System.Drawing.Size(1544, 31);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // đăngNhậpToolStripMenuItem
+            // menuItem_Login
             // 
-            this.đăngNhậpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.đăngNhậpToolStripMenuItem1,
-            this.thôngTinKháchĐãĐặtToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.thoátToolStripMenuItem});
-            this.đăngNhậpToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.đăngNhậpToolStripMenuItem.Name = "đăngNhậpToolStripMenuItem";
-            this.đăngNhậpToolStripMenuItem.Size = new System.Drawing.Size(107, 27);
-            this.đăngNhậpToolStripMenuItem.Text = "Chức năng";
-            // 
-            // đăngNhậpToolStripMenuItem1
-            // 
-            this.đăngNhậpToolStripMenuItem1.Name = "đăngNhậpToolStripMenuItem1";
-            this.đăngNhậpToolStripMenuItem1.Size = new System.Drawing.Size(272, 28);
-            this.đăngNhậpToolStripMenuItem1.Text = "Đăng nhập ";
-            this.đăngNhậpToolStripMenuItem1.Click += new System.EventHandler(this.đăngNhậpToolStripMenuItem1_Click);
-            // 
-            // thôngTinKháchĐãĐặtToolStripMenuItem
-            // 
-            this.thôngTinKháchĐãĐặtToolStripMenuItem.Name = "thôngTinKháchĐãĐặtToolStripMenuItem";
-            this.thôngTinKháchĐãĐặtToolStripMenuItem.Size = new System.Drawing.Size(272, 28);
-            this.thôngTinKháchĐãĐặtToolStripMenuItem.Text = "Thông tin khách đã đặt";
+            this.menuItem_Login.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSeparator1});
+            this.menuItem_Login.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuItem_Login.Name = "menuItem_Login";
+            this.menuItem_Login.Size = new System.Drawing.Size(114, 27);
+            this.menuItem_Login.Text = "Đăng nhập ";
+            this.menuItem_Login.Click += new System.EventHandler(this.menuItem_Login_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(269, 6);
-            // 
-            // thoátToolStripMenuItem
-            // 
-            this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(272, 28);
-            this.thoátToolStripMenuItem.Text = "Thoát";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
             // 
             // label15
             // 
@@ -410,7 +387,7 @@
             this.cmb_MovieTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmb_MovieTitle.Name = "cmb_MovieTitle";
             this.cmb_MovieTitle.Size = new System.Drawing.Size(284, 28);
-            this.cmb_MovieTitle.TabIndex = 6;
+            this.cmb_MovieTitle.TabIndex = 1;
             this.cmb_MovieTitle.SelectedIndexChanged += new System.EventHandler(this.cmb_MovieTitle_SelectedIndexChanged);
             // 
             // cmb_ShowTime
@@ -420,29 +397,29 @@
             this.cmb_ShowTime.Location = new System.Drawing.Point(123, 85);
             this.cmb_ShowTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmb_ShowTime.Name = "cmb_ShowTime";
-            this.cmb_ShowTime.Size = new System.Drawing.Size(199, 28);
-            this.cmb_ShowTime.TabIndex = 6;
+            this.cmb_ShowTime.Size = new System.Drawing.Size(282, 28);
+            this.cmb_ShowTime.TabIndex = 2;
             this.cmb_ShowTime.SelectedIndexChanged += new System.EventHandler(this.cmb_ShowTime_SelectedIndexChanged);
             // 
             // txt_Total
             // 
-            this.txt_Total.Enabled = false;
             this.txt_Total.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Total.Location = new System.Drawing.Point(120, 289);
             this.txt_Total.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Total.Name = "txt_Total";
-            this.txt_Total.Size = new System.Drawing.Size(216, 29);
+            this.txt_Total.Size = new System.Drawing.Size(284, 29);
             this.txt_Total.TabIndex = 1;
             this.txt_Total.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // grb_Select
             // 
+            this.grb_Select.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.grb_Select.Controls.Add(this.label15);
             this.grb_Select.Controls.Add(this.cmb_ShowTime);
             this.grb_Select.Controls.Add(this.cmb_MovieTitle);
             this.grb_Select.Controls.Add(this.label16);
             this.grb_Select.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grb_Select.Location = new System.Drawing.Point(12, 46);
+            this.grb_Select.Location = new System.Drawing.Point(12, 137);
             this.grb_Select.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grb_Select.Name = "grb_Select";
             this.grb_Select.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -463,6 +440,7 @@
             // 
             // grb_InfoSelected
             // 
+            this.grb_InfoSelected.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.grb_InfoSelected.Controls.Add(this.list_SeatSelected);
             this.grb_InfoSelected.Controls.Add(this.btn_Confirm);
             this.grb_InfoSelected.Controls.Add(this.txt_Time);
@@ -475,7 +453,7 @@
             this.grb_InfoSelected.Controls.Add(this.label14);
             this.grb_InfoSelected.Controls.Add(this.label17);
             this.grb_InfoSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grb_InfoSelected.Location = new System.Drawing.Point(12, 199);
+            this.grb_InfoSelected.Location = new System.Drawing.Point(12, 290);
             this.grb_InfoSelected.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grb_InfoSelected.Name = "grb_InfoSelected";
             this.grb_InfoSelected.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -498,7 +476,7 @@
             // 
             // btn_Confirm
             // 
-            this.btn_Confirm.Location = new System.Drawing.Point(123, 322);
+            this.btn_Confirm.Location = new System.Drawing.Point(164, 324);
             this.btn_Confirm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Confirm.Name = "btn_Confirm";
             this.btn_Confirm.Size = new System.Drawing.Size(132, 39);
@@ -509,29 +487,26 @@
             // 
             // txt_Time
             // 
-            this.txt_Time.Enabled = false;
             this.txt_Time.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Time.Location = new System.Drawing.Point(123, 114);
             this.txt_Time.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Time.Name = "txt_Time";
-            this.txt_Time.Size = new System.Drawing.Size(216, 29);
+            this.txt_Time.Size = new System.Drawing.Size(281, 29);
             this.txt_Time.TabIndex = 1;
             this.txt_Time.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_Date
             // 
-            this.txt_Date.Enabled = false;
             this.txt_Date.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Date.Location = new System.Drawing.Point(123, 74);
             this.txt_Date.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Date.Name = "txt_Date";
-            this.txt_Date.Size = new System.Drawing.Size(216, 29);
+            this.txt_Date.Size = new System.Drawing.Size(281, 29);
             this.txt_Date.TabIndex = 1;
             this.txt_Date.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_MovieTitle
             // 
-            this.txt_MovieTitle.Enabled = false;
             this.txt_MovieTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_MovieTitle.Location = new System.Drawing.Point(123, 32);
             this.txt_MovieTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -583,11 +558,11 @@
             // btn_Close
             // 
             this.btn_Close.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Close.Location = new System.Drawing.Point(12, 583);
+            this.btn_Close.Location = new System.Drawing.Point(12, 682);
             this.btn_Close.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Close.Name = "btn_Close";
             this.btn_Close.Size = new System.Drawing.Size(109, 37);
-            this.btn_Close.TabIndex = 3;
+            this.btn_Close.TabIndex = 5;
             this.btn_Close.Text = "Thoát";
             this.btn_Close.UseVisualStyleBackColor = true;
             this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
@@ -596,25 +571,36 @@
             // 
             this.err_Warning.ContainerControl = this;
             // 
-            // btn_Continue
+            // btn_PayAway
             // 
-            this.btn_Continue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Continue.Location = new System.Drawing.Point(1439, 583);
-            this.btn_Continue.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_Continue.Name = "btn_Continue";
-            this.btn_Continue.Size = new System.Drawing.Size(109, 37);
-            this.btn_Continue.TabIndex = 3;
-            this.btn_Continue.Text = "Tiếp tục ";
-            this.btn_Continue.UseVisualStyleBackColor = true;
-            this.btn_Continue.Click += new System.EventHandler(this.btn_Continue_Click);
+            this.btn_PayAway.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_PayAway.Location = new System.Drawing.Point(1408, 682);
+            this.btn_PayAway.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_PayAway.Name = "btn_PayAway";
+            this.btn_PayAway.Size = new System.Drawing.Size(124, 37);
+            this.btn_PayAway.TabIndex = 4;
+            this.btn_PayAway.Text = "Thanh toán";
+            this.btn_PayAway.UseVisualStyleBackColor = true;
+            this.btn_PayAway.Click += new System.EventHandler(this.btn_Continue_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(459, 46);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(639, 39);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "WELCOME TO 2_PILLARS\'S CINEMA";
             // 
             // BookingTicketsUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1569, 634);
-            this.Controls.Add(this.btn_Continue);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(1544, 732);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.btn_PayAway);
             this.Controls.Add(this.btn_Close);
             this.Controls.Add(this.grb_InfoSelected);
             this.Controls.Add(this.grb_Select);
@@ -667,11 +653,8 @@
         private System.Windows.Forms.PictureBox pictureBox31;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem đăngNhậpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem đăngNhậpToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem thôngTinKháchĐãĐặtToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuItem_Login;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox cmb_MovieTitle;
         private System.Windows.Forms.ComboBox cmb_ShowTime;
@@ -691,6 +674,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ErrorProvider err_Warning;
         private System.Windows.Forms.ListBox list_SeatSelected;
-        private System.Windows.Forms.Button btn_Continue;
+        private System.Windows.Forms.Button btn_PayAway;
+        private System.Windows.Forms.Label label6;
     }
 }

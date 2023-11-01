@@ -176,5 +176,10 @@ namespace OnlineMovieTicketBooking_2pillars.Views
         {
             this.Close();
         }
+
+        private void frm_EmployeeAdd_Load(object sender, EventArgs e)
+        {
+            this.CenterToScreen();
+        }
     }
 }

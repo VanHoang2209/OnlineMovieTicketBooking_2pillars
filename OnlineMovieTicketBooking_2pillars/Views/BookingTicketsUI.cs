@@ -13,9 +13,8 @@ namespace OnlineMovieTicketBooking_2pillars.Views
     public partial class BookingTicketsUI : Form
     {
         private BookingInfo bookingInfo;
-        private ScheduledMovie scheduledMovie;
         private Customer customer;
-        private Reservation reservation;
+        private int reserID;
         private decimal total = 0;
         private bool isBookingSucessful = false;
 
@@ -95,7 +94,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
         {
             Button btn = new Button();
             btn.Text = name;
-            btn.TextAlign = ContentAlignment.MiddleRight;
+            btn.TextAlign = ContentAlignment.MiddleCenter;
             btn.Tag = id;
 
             if (id >= 1 && id <= 20)
@@ -180,7 +179,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             else if (btn.BackColor == Color.Gray)
             {
                 btn_Confirm.Enabled = false;
-                MessageBox.Show("Ghế đã được bán!");
+                MessageBox.Show("Ghế đã được đặt!");
             }
         }
 
@@ -280,15 +279,25 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             using (var dbContext = new MovieDBContext())
             {
                 var exist = dbContext.Reservations.FirstOrDefault(x => x.ScheduledMovie.ID == idScheduledMovie && x.ScheduledMovie.MovieID == movieID);
-                //MessageBox.Show(exist.ScheduledMovie.ID + " " + exist.ScheduledMovie.MovieID);
                 if (exist == null)
                 {
-                    //MessageBox.Show(exist);
                     foreach (Button button in pnl_ListSeat.Controls.OfType<Button>())
                     {
-                        button.BackColor = Color.Yellow;
+                        if (button.Tag is int btnID)
+                        {
+                            if (btnID >= 1 && btnID <= 20)
+                            {
+                                button.BackColor = Color.Yellow;
+                            }
+                            else if (btnID >= 21 && btnID <= 23)
+                            {
+                                button.BackColor = Color.Aqua;
+                            }
+                        }
                     }
                     list_SeatSelected.Items.Clear();
+                    total = 0;
+                    txt_Total.Text = total.ToString();
                 }
 
                 else
@@ -296,7 +305,17 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                     // Đặt màu lại cho tất cả ghế trước khi cập nhật lại màu của các ghế đã đặt
                     foreach (Button button in pnl_ListSeat.Controls.OfType<Button>())
                     {
-                        button.BackColor = Color.Yellow;
+                        if (button.Tag is int btnID)
+                        {
+                            if (btnID >= 1 && btnID <= 20)
+                            {
+                                button.BackColor = Color.Yellow;
+                            }
+                            else if (btnID >= 21 && btnID <= 23)
+                            {
+                                button.BackColor = Color.Aqua;
+                            }
+                        }
                     }
                     list_SeatSelected.Items.Clear();
 
@@ -328,10 +347,15 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                 {
                     using (var dbContext = new MovieDBContext())
                     {
-                        var infoCustomerForm = new InfoCustomer(this);
-                        var result = infoCustomerForm.ShowDialog();
-                        if (result == DialogResult.OK)
+
+                        DialogResult result = MessageBox.Show("Bạn có muốn xác nhận thông tin đã chọn?"
+                            , "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
                         {
+                            var infoCustomerForm = new InfoCustomer(this);
+                            result = infoCustomerForm.ShowDialog();
+
                             customer = new Customer
                             {
                                 FullName = infoCustomerForm.CustomerName,
@@ -375,10 +399,15 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                             dbContext.Reservations.Add(reservation);
                             dbContext.SaveChanges();
 
+
+                            reserID = reservation.ID;
+
                             MessageBox.Show("Đặt vé thành công!");
-                            isBookingSucessful = true;
+
                             DefaultSetting();
                             UpdateButtonState();
+                            isBookingSucessful = true;
+
                         }
                     }
                 }
@@ -394,9 +423,6 @@ namespace OnlineMovieTicketBooking_2pillars.Views
         #region "Input Checked"
         private bool InputChecked()
         {
-            //this.Hide();
-            //frm_Login frm_Login = new frm_Login();
-            //frm_Login.Show();
             err_Warning.Clear();
             if (string.IsNullOrEmpty(txt_MovieTitle.Text) && string.IsNullOrWhiteSpace(txt_MovieTitle.Text))
             {
@@ -435,11 +461,21 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                 // Đặt vé thành công rồi mới được tiếp tục
                 if(isBookingSucessful == true)
                 {
-                    
+                    MessageBox.Show("Bạn đã thanh toán thành công");
+
+
+                    frm_TicketsUI frmTickets = new frm_TicketsUI(this);
+                    frmTickets.SetTicketInformation(reserID.ToString(), cmb_MovieTitle.Text, cmb_ShowTime.Text
+                                                    , customer.FullName, customer.Phone, customer.Email
+                                                    , bookingInfo.TotalPrice.ToString()
+                                                    , list_SeatSelected.Items.Cast<string>().ToList());
+
+                    frmTickets.SetListSeats(bookingInfo.SelectedSeats);
+                    frmTickets.Show();
                 }
                 else
                 {
-                    MessageBox.Show("Hãy nhập đầy đủ thông tin trước khi in vé");
+                    MessageBox.Show("Hãy nhập đầy đủ thông tin trước khi thanh toán");
                 }
             }
             catch(Exception ex)
@@ -449,11 +485,11 @@ namespace OnlineMovieTicketBooking_2pillars.Views
            
         }
 
-        private void đăngNhậpToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void menuItem_Login_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frm_Login frm = new frm_Login();
-            frm.Show();
+                this.Hide();
+                frm_Login frm = new frm_Login();
+                frm.Show();
         }
     }
 }

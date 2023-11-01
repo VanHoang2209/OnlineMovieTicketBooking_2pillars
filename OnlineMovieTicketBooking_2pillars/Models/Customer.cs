@@ -22,7 +22,7 @@ namespace OnlineMovieTicketBooking_2pillars.Models
         public string FullName { get; set; }
 
         [Required]
-        [StringLength(300)]
+        [StringLength(100)]
         public string Email { get; set; }
 
         [Required]

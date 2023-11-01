@@ -42,12 +42,13 @@
             this.col_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_Back = new System.Windows.Forms.Button();
             this.btn_Disable = new System.Windows.Forms.Button();
             this.btn_Update = new System.Windows.Forms.Button();
             this.btn_Add = new System.Windows.Forms.Button();
             this.err_Warning = new System.Windows.Forms.ErrorProvider(this.components);
-            this.col_Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label5 = new System.Windows.Forms.Label();
             this.grb_EmployeeInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_EmployeeList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.err_Warning)).BeginInit();
@@ -64,7 +65,7 @@
             this.grb_EmployeeInfo.Controls.Add(this.label2);
             this.grb_EmployeeInfo.Controls.Add(this.label1);
             this.grb_EmployeeInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grb_EmployeeInfo.Location = new System.Drawing.Point(21, 42);
+            this.grb_EmployeeInfo.Location = new System.Drawing.Point(21, 156);
             this.grb_EmployeeInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grb_EmployeeInfo.Name = "grb_EmployeeInfo";
             this.grb_EmployeeInfo.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -76,15 +77,15 @@
             // cmb_Position
             // 
             this.cmb_Position.FormattingEnabled = true;
-            this.cmb_Position.Location = new System.Drawing.Point(173, 222);
+            this.cmb_Position.Location = new System.Drawing.Point(173, 230);
             this.cmb_Position.Name = "cmb_Position";
             this.cmb_Position.Size = new System.Drawing.Size(235, 28);
-            this.cmb_Position.TabIndex = 7;
+            this.cmb_Position.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(36, 230);
+            this.label4.Location = new System.Drawing.Point(36, 238);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 20);
             this.label4.TabIndex = 6;
@@ -96,7 +97,7 @@
             this.txt_Phone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Phone.Name = "txt_Phone";
             this.txt_Phone.Size = new System.Drawing.Size(235, 27);
-            this.txt_Phone.TabIndex = 5;
+            this.txt_Phone.TabIndex = 3;
             // 
             // txt_FullName
             // 
@@ -104,7 +105,7 @@
             this.txt_FullName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_FullName.Name = "txt_FullName";
             this.txt_FullName.Size = new System.Drawing.Size(235, 27);
-            this.txt_FullName.TabIndex = 4;
+            this.txt_FullName.TabIndex = 2;
             // 
             // txt_ID
             // 
@@ -112,7 +113,7 @@
             this.txt_ID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_ID.Name = "txt_ID";
             this.txt_ID.Size = new System.Drawing.Size(235, 27);
-            this.txt_ID.TabIndex = 3;
+            this.txt_ID.TabIndex = 1;
             // 
             // label3
             // 
@@ -152,13 +153,13 @@
             this.col_FullName,
             this.col_Phone,
             this.col_Position});
-            this.dgv_EmployeeList.Location = new System.Drawing.Point(493, 42);
+            this.dgv_EmployeeList.Location = new System.Drawing.Point(476, 156);
             this.dgv_EmployeeList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_EmployeeList.Name = "dgv_EmployeeList";
             this.dgv_EmployeeList.ReadOnly = true;
             this.dgv_EmployeeList.RowHeadersWidth = 51;
             this.dgv_EmployeeList.RowTemplate.Height = 24;
-            this.dgv_EmployeeList.Size = new System.Drawing.Size(519, 348);
+            this.dgv_EmployeeList.Size = new System.Drawing.Size(622, 348);
             this.dgv_EmployeeList.TabIndex = 1;
             this.dgv_EmployeeList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_EmployeeList_CellClick);
             // 
@@ -183,50 +184,57 @@
             this.col_Phone.Name = "col_Phone";
             this.col_Phone.ReadOnly = true;
             // 
+            // col_Position
+            // 
+            this.col_Position.HeaderText = "Chức vụ";
+            this.col_Position.MinimumWidth = 6;
+            this.col_Position.Name = "col_Position";
+            this.col_Position.ReadOnly = true;
+            // 
             // btn_Back
             // 
-            this.btn_Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Back.Location = new System.Drawing.Point(381, 340);
+            this.btn_Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Back.Location = new System.Drawing.Point(375, 454);
             this.btn_Back.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Back.Name = "btn_Back";
             this.btn_Back.Size = new System.Drawing.Size(95, 50);
-            this.btn_Back.TabIndex = 16;
+            this.btn_Back.TabIndex = 8;
             this.btn_Back.Text = "Quay lại";
             this.btn_Back.UseVisualStyleBackColor = true;
             this.btn_Back.Click += new System.EventHandler(this.btn_Back_Click);
             // 
             // btn_Disable
             // 
-            this.btn_Disable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Disable.Location = new System.Drawing.Point(263, 340);
+            this.btn_Disable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Disable.Location = new System.Drawing.Point(263, 454);
             this.btn_Disable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Disable.Name = "btn_Disable";
             this.btn_Disable.Size = new System.Drawing.Size(95, 50);
-            this.btn_Disable.TabIndex = 15;
+            this.btn_Disable.TabIndex = 7;
             this.btn_Disable.Text = "Vô hiệu";
             this.btn_Disable.UseVisualStyleBackColor = true;
             this.btn_Disable.Click += new System.EventHandler(this.btn_Disable_Click);
             // 
             // btn_Update
             // 
-            this.btn_Update.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Update.Location = new System.Drawing.Point(141, 340);
+            this.btn_Update.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Update.Location = new System.Drawing.Point(141, 454);
             this.btn_Update.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Update.Name = "btn_Update";
             this.btn_Update.Size = new System.Drawing.Size(95, 50);
-            this.btn_Update.TabIndex = 14;
+            this.btn_Update.TabIndex = 6;
             this.btn_Update.Text = "Sửa";
             this.btn_Update.UseVisualStyleBackColor = true;
             this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
             // btn_Add
             // 
-            this.btn_Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Add.Location = new System.Drawing.Point(21, 340);
+            this.btn_Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Add.Location = new System.Drawing.Point(21, 454);
             this.btn_Add.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(95, 50);
-            this.btn_Add.TabIndex = 13;
+            this.btn_Add.TabIndex = 5;
             this.btn_Add.Text = "Thêm";
             this.btn_Add.UseVisualStyleBackColor = true;
             this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
@@ -235,18 +243,22 @@
             // 
             this.err_Warning.ContainerControl = this;
             // 
-            // col_Position
+            // label5
             // 
-            this.col_Position.HeaderText = "Chức vụ";
-            this.col_Position.MinimumWidth = 6;
-            this.col_Position.Name = "col_Position";
-            this.col_Position.ReadOnly = true;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(335, 51);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(380, 39);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "QUẢN LÝ NHÂN VIÊN";
             // 
             // frm_EmployeeAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 420);
+            this.ClientSize = new System.Drawing.Size(1110, 530);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btn_Back);
             this.Controls.Add(this.btn_Disable);
             this.Controls.Add(this.btn_Update);
@@ -255,12 +267,14 @@
             this.Controls.Add(this.grb_EmployeeInfo);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frm_EmployeeAdd";
-            this.Text = "THÊM NHÂN VIÊN";
+            this.Text = "Employee Management";
+            this.Load += new System.EventHandler(this.frm_EmployeeAdd_Load);
             this.grb_EmployeeInfo.ResumeLayout(false);
             this.grb_EmployeeInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_EmployeeList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.err_Warning)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -285,5 +299,6 @@
         private System.Windows.Forms.ComboBox cmb_Position;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Position;
+        private System.Windows.Forms.Label label5;
     }
 }
