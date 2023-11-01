@@ -114,23 +114,36 @@ namespace OnlineMovieTicketBooking_2pillars.Views
         {
             if (CheckInput2())
             {
-                int id = int.Parse(txt_MovieID.Text);
-                Movie existingMovie = context.Movies.FirstOrDefault(s => s.ID == id);
-                if (existingMovie != null)
+                try
                 {
-                    DialogResult dr = MessageBox.Show("Bạn có muốn xóa không?", "CẢNH BÁO", MessageBoxButtons.YesNo);
-                    if (dr == DialogResult.Yes)
+                    int id = int.Parse(txt_MovieID.Text);
+                    Movie existingMovie = context.Movies.FirstOrDefault(s => s.ID == id);
+                    if (existingMovie != null)
                     {
-                        context.Movies.Remove(existingMovie);
-                        context.SaveChanges();
-                        MessageBox.Show("Xóa thông tin thành công!");
+                        ScheduledMovie existingSchedule = context.ScheduledMovies.FirstOrDefault(p => p.MovieID == id);
+                        if (existingSchedule != null)
+                            throw new Exception("Phim đã có lịch chiếu! Không thể xóa!");
+                        else
+                        {
+                            DialogResult dr = MessageBox.Show("Bạn có muốn xóa không?", "CẢNH BÁO", MessageBoxButtons.YesNo);
+                            if (dr == DialogResult.Yes)
+                            {
+                                context.Movies.Remove(existingMovie);
+                                context.SaveChanges();
+                                MessageBox.Show("Xóa thông tin thành công!");
+                                List<Movie> listMovie = context.Movies.Include("Employee").ToList();
+                                BindGrid(listMovie);
+                            }
+                        }
                     }
+                    else
+                        MessageBox.Show("Mã phim không tồn tại!");
                 }
-                else
-                    MessageBox.Show("Mã phim không tồn tại!");
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            List<Movie> listMovie = context.Movies.Include("Employee").ToList();
-            BindGrid(listMovie);
         }
 
         private void btn_Back_Click(object sender, EventArgs e)
