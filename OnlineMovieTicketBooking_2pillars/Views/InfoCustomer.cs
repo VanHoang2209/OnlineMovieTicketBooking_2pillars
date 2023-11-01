@@ -13,15 +13,15 @@ using System.Text.RegularExpressions;
 
 namespace OnlineMovieTicketBooking_2pillars.Views
 {
-    public partial class InfoCustomer : Form
+    public partial class frm_InfoCustomer : Form
     {
         public string CustomerName { get; private set; }
         public string CustomerPhone { get; private set; }
         public string CustomerEmail { get; private set; }
 
 
-        private BookingTicketsUI bookingTicketsUI;
-        public InfoCustomer(BookingTicketsUI bookingTicketsUI)
+        private frm_BookingTicketsUI bookingTicketsUI;
+        public frm_InfoCustomer(frm_BookingTicketsUI bookingTicketsUI)
         {
             InitializeComponent();
             this.bookingTicketsUI = bookingTicketsUI;

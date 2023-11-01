@@ -1,6 +1,6 @@
 ﻿namespace OnlineMovieTicketBooking_2pillars.Views
 {
-    partial class InfoCustomer
+    partial class frm_InfoCustomer
     {
         /// <summary>
         /// Required designer variable.
@@ -172,13 +172,13 @@
             // 
             this.err_Warning.ContainerControl = this;
             // 
-            // InfoCustomer
+            // frm_InfoCustomer
             // 
             this.ClientSize = new System.Drawing.Size(458, 372);
             this.Controls.Add(this.btn_Continue);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label6);
-            this.Name = "InfoCustomer";
+            this.Name = "frm_InfoCustomer";
             this.Text = "Customer Infomation";
             this.Load += new System.EventHandler(this.InfoCustomer_Load);
             this.groupBox1.ResumeLayout(false);

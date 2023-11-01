@@ -1,6 +1,6 @@
 ﻿namespace OnlineMovieTicketBooking_2pillars.Views
 {
-    partial class BookingTicketsUI
+    partial class frm_BookingTicketsUI
     {
         /// <summary>
         /// Required designer variable.
@@ -367,7 +367,7 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(221, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(71, 6);
             // 
             // label15
             // 
@@ -413,7 +413,7 @@
             // 
             // grb_Select
             // 
-            this.grb_Select.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.grb_Select.BackColor = System.Drawing.SystemColors.Control;
             this.grb_Select.Controls.Add(this.label15);
             this.grb_Select.Controls.Add(this.cmb_ShowTime);
             this.grb_Select.Controls.Add(this.cmb_MovieTitle);
@@ -440,7 +440,7 @@
             // 
             // grb_InfoSelected
             // 
-            this.grb_InfoSelected.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.grb_InfoSelected.BackColor = System.Drawing.SystemColors.Control;
             this.grb_InfoSelected.Controls.Add(this.list_SeatSelected);
             this.grb_InfoSelected.Controls.Add(this.btn_Confirm);
             this.grb_InfoSelected.Controls.Add(this.txt_Time);
@@ -581,7 +581,7 @@
             this.btn_PayAway.TabIndex = 4;
             this.btn_PayAway.Text = "Thanh toán";
             this.btn_PayAway.UseVisualStyleBackColor = true;
-            this.btn_PayAway.Click += new System.EventHandler(this.btn_Continue_Click);
+            this.btn_PayAway.Click += new System.EventHandler(this.btn_PayAway_Click);
             // 
             // label6
             // 
@@ -589,11 +589,11 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(459, 46);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(639, 39);
+            this.label6.Size = new System.Drawing.Size(614, 38);
             this.label6.TabIndex = 9;
             this.label6.Text = "WELCOME TO 2_PILLARS\'S CINEMA";
             // 
-            // BookingTicketsUI
+            // frm_BookingTicketsUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -608,7 +608,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "BookingTicketsUI";
+            this.Name = "frm_BookingTicketsUI";
             this.Text = "Booking Tickets";
             this.Load += new System.EventHandler(this.BookingTicketsUI_Load);
             this.pnl_ListSeat.ResumeLayout(false);

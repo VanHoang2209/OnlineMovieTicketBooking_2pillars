@@ -12,8 +12,8 @@ namespace OnlineMovieTicketBooking_2pillars.Views
 {
     public partial class frm_TicketsUI : Form
     {
-        private BookingTicketsUI bookingTicketsUI;
-        public frm_TicketsUI(BookingTicketsUI bookingTicketsUI)
+        private frm_BookingTicketsUI bookingTicketsUI;
+        public frm_TicketsUI(frm_BookingTicketsUI bookingTicketsUI)
         {
             InitializeComponent();
             this.bookingTicketsUI = bookingTicketsUI;
@@ -39,8 +39,6 @@ namespace OnlineMovieTicketBooking_2pillars.Views
         {
             rtb_MovieTitle.Select();
             rtb_MovieTitle.SelectionAlignment = HorizontalAlignment.Center;
-            rtb_TotalPrice.Select();
-            rtb_TotalPrice.SelectionAlignment = HorizontalAlignment.Center;
             this.CenterToScreen();
         }
     }

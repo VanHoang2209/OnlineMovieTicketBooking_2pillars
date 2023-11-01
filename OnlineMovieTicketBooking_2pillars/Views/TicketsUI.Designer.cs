@@ -89,7 +89,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(33, 403);
+            this.label5.Location = new System.Drawing.Point(33, 397);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 20);
             this.label5.TabIndex = 4;
@@ -159,9 +159,9 @@
             // 
             this.rtb_Seats.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtb_Seats.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtb_Seats.Location = new System.Drawing.Point(282, 385);
+            this.rtb_Seats.Location = new System.Drawing.Point(282, 397);
             this.rtb_Seats.Name = "rtb_Seats";
-            this.rtb_Seats.Size = new System.Drawing.Size(196, 59);
+            this.rtb_Seats.Size = new System.Drawing.Size(196, 48);
             this.rtb_Seats.TabIndex = 9;
             this.rtb_Seats.Text = "";
             // 

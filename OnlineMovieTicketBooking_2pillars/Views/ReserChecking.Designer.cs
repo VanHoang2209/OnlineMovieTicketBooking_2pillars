@@ -62,7 +62,7 @@
             this.dgv_ReserList.ReadOnly = true;
             this.dgv_ReserList.RowHeadersWidth = 51;
             this.dgv_ReserList.RowTemplate.Height = 24;
-            this.dgv_ReserList.Size = new System.Drawing.Size(1285, 447);
+            this.dgv_ReserList.Size = new System.Drawing.Size(1368, 447);
             this.dgv_ReserList.TabIndex = 0;
             // 
             // col_ID
@@ -124,7 +124,7 @@
             // btn_Back
             // 
             this.btn_Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Back.Location = new System.Drawing.Point(1175, 623);
+            this.btn_Back.Location = new System.Drawing.Point(1249, 623);
             this.btn_Back.Name = "btn_Back";
             this.btn_Back.Size = new System.Drawing.Size(110, 38);
             this.btn_Back.TabIndex = 1;
@@ -136,7 +136,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(412, 52);
+            this.label1.Location = new System.Drawing.Point(489, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(400, 38);
             this.label1.TabIndex = 2;
@@ -146,7 +146,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1287, 673);
+            this.ClientSize = new System.Drawing.Size(1371, 673);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Back);
             this.Controls.Add(this.dgv_ReserList);

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace OnlineMovieTicketBooking_2pillars.Views
 {
-    public partial class BookingTicketsUI : Form
+    public partial class frm_BookingTicketsUI : Form
     {
         private BookingInfo bookingInfo;
         private Customer customer;
@@ -18,7 +18,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
         private decimal total = 0;
         private bool isBookingSucessful = false;
 
-        public BookingTicketsUI()
+        public frm_BookingTicketsUI()
         {
             InitializeComponent();
             ControlSetting();
@@ -208,7 +208,6 @@ namespace OnlineMovieTicketBooking_2pillars.Views
         }
         #endregion
 
-
         // Combobox Movie Handle
         #region "Combobox Movie and Combobox ScheduledMovie Handle"
         private void ControlSetting()
@@ -247,7 +246,6 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             }
         }
         #endregion
-
 
         // Groupbox Infor Selected
         #region "Groupbox infor selected"
@@ -335,8 +333,6 @@ namespace OnlineMovieTicketBooking_2pillars.Views
         }
         #endregion
 
-
-
         // Button Confirm
         #region "Button Confirm"
         public void Btn_Confirm_Click(object sender, EventArgs e)
@@ -353,7 +349,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
 
                         if (result == DialogResult.Yes)
                         {
-                            var infoCustomerForm = new InfoCustomer(this);
+                            var infoCustomerForm = new frm_InfoCustomer(this);
                             result = infoCustomerForm.ShowDialog();
 
                             customer = new Customer
@@ -419,6 +415,39 @@ namespace OnlineMovieTicketBooking_2pillars.Views
         }
         #endregion
 
+        // Button PayAway
+        #region "Button PayAway"
+        private void btn_PayAway_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Đặt vé thành công rồi mới được tiếp tục
+                if (isBookingSucessful == true)
+                {
+                    MessageBox.Show("Bạn đã thanh toán thành công");
+
+
+                    frm_TicketsUI frmTickets = new frm_TicketsUI(this);
+                    frmTickets.SetTicketInformation(reserID.ToString(), cmb_MovieTitle.Text, cmb_ShowTime.Text
+                                                    , customer.FullName, customer.Phone, customer.Email
+                                                    , bookingInfo.TotalPrice.ToString()
+                                                    , list_SeatSelected.Items.Cast<string>().ToList());
+
+                    frmTickets.SetListSeats(bookingInfo.SelectedSeats);
+                    frmTickets.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Hãy nhập đầy đủ thông tin trước khi thanh toán");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        #endregion
+
         // Input Checked
         #region "Input Checked"
         private bool InputChecked()
@@ -453,43 +482,11 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             Application.Exit();
             this.Close();
         }
-
-        private void btn_Continue_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // Đặt vé thành công rồi mới được tiếp tục
-                if(isBookingSucessful == true)
-                {
-                    MessageBox.Show("Bạn đã thanh toán thành công");
-
-
-                    frm_TicketsUI frmTickets = new frm_TicketsUI(this);
-                    frmTickets.SetTicketInformation(reserID.ToString(), cmb_MovieTitle.Text, cmb_ShowTime.Text
-                                                    , customer.FullName, customer.Phone, customer.Email
-                                                    , bookingInfo.TotalPrice.ToString()
-                                                    , list_SeatSelected.Items.Cast<string>().ToList());
-
-                    frmTickets.SetListSeats(bookingInfo.SelectedSeats);
-                    frmTickets.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Hãy nhập đầy đủ thông tin trước khi thanh toán");
-                }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-           
-        }
-
         private void menuItem_Login_Click(object sender, EventArgs e)
         {
-                this.Hide();
-                frm_Login frm = new frm_Login();
-                frm.Show();
+            this.Hide();
+            frm_Login frm = new frm_Login();
+            frm.Show();
         }
     }
 }
