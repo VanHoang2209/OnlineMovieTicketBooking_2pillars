@@ -37,10 +37,13 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                 dgv_ReserList.Rows[index].Cells[7].Value = item.Customer.Email;
             }
         }
-
         private void btn_Back_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void frm_ReserChecking_Load(object sender, EventArgs e)
+        {
+            this.CenterToScreen();
         }
     }
 }

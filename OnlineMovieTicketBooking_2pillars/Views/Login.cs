@@ -62,5 +62,10 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             GlobalVariables.AccountID = -1;
             Application.Restart();
         }
+
+        private void frm_Login_Load(object sender, EventArgs e)
+        {
+            this.CenterToScreen();
+        }
     }
 }

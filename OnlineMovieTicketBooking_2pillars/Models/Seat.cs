@@ -19,7 +19,7 @@ namespace OnlineMovieTicketBooking_2pillars.Models
         public int ID { get; set; }
 
         [Required]
-        [StringLength(50)]
+        [StringLength(3)]
         public string Name { get; set; }
 
         public decimal Price { get; set; }

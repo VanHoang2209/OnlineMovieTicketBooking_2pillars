@@ -12,26 +12,36 @@ namespace OnlineMovieTicketBooking_2pillars.Views
 {
     public partial class frm_TicketsUI : Form
     {
-        public frm_TicketsUI()
+        private BookingTicketsUI bookingTicketsUI;
+        public frm_TicketsUI(BookingTicketsUI bookingTicketsUI)
         {
             InitializeComponent();
+            this.bookingTicketsUI = bookingTicketsUI;
         }
-        public void SetTicketInformation(string movieName, string showDate, string showTime, string customerName, string customerPhone, string customerEmail, List<string> listSeats, decimal totalPrice)
+        public void SetTicketInformation(string reserID, string movieTitle, string showDate, string customerName, string customerPhone, string customerEmail, string totalPrice, List<string> listSeats)
         {
-            txt_MovieName.Text = movieName;
-            txt_Scheduled.Text = showDate + " " + showTime;
-            txt_CustomerName.Text = customerName;
-            txt_CustomerPhone.Text = customerPhone;
-            txt_CustomerEmail.Text = customerEmail;
-            //txt_ReserID.Text = reserID;
+            rtb_MovieTitle.Text = movieTitle;
+            rtb_ScheduledMovie.Text = showDate;
+            rtb_CustomerName.Text = customerName;
+            rtb_CustomerPhone.Text = customerPhone;
+            rtb_CustomerEmail.Text = customerEmail;
+            rtb_ReserID.Text = reserID;
+            rtb_TotalPrice.Text = totalPrice;
 
-            // Hiển thị danh sách ghế đã chọn
-            foreach (string seat in listSeats)
-            {
-                txt_Scheduled.Text += seat + Environment.NewLine;
-            }
+        }
+        public void SetListSeats(List<string> listSeats)
+        {
+            string seatsText = string.Join(", ", listSeats);
+            rtb_Seats.Text = seatsText;
+        }
 
-            txt_TotalPrice.Text = totalPrice.ToString();
+        private void frm_TicketsUI_Load(object sender, EventArgs e)
+        {
+            rtb_MovieTitle.Select();
+            rtb_MovieTitle.SelectionAlignment = HorizontalAlignment.Center;
+            rtb_TotalPrice.Select();
+            rtb_TotalPrice.SelectionAlignment = HorizontalAlignment.Center;
+            this.CenterToScreen();
         }
     }
 }

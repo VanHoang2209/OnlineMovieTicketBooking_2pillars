@@ -62,5 +62,10 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             frm_ReserChecking frm = new frm_ReserChecking();
             frm.Show();
         }
+
+        private void frm_EmployeeHome_Load(object sender, EventArgs e)
+        {
+            this.CenterToScreen();
+        }
     }
 }

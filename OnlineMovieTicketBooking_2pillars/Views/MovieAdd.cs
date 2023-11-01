@@ -147,5 +147,10 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                 txt_MovieName.Text = dgv_MovieList.Rows[index].Cells[1].Value.ToString();
             }
         }
+
+        private void frm_MovieAdd_Load(object sender, EventArgs e)
+        {
+            this.CenterToScreen();
+        }
     }
 }

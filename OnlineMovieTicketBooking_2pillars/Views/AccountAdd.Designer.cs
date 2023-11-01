@@ -41,15 +41,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_AccountList = new System.Windows.Forms.DataGridView();
+            this.col_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_Add = new System.Windows.Forms.Button();
             this.btn_Permission = new System.Windows.Forms.Button();
             this.btn_Disable = new System.Windows.Forms.Button();
             this.btn_Back = new System.Windows.Forms.Button();
             this.err_Warning = new System.Windows.Forms.ErrorProvider(this.components);
-            this.col_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label5 = new System.Windows.Forms.Label();
             this.grb_AccountInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_AccountList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.err_Warning)).BeginInit();
@@ -67,9 +68,10 @@
             this.grb_AccountInfo.Controls.Add(this.label3);
             this.grb_AccountInfo.Controls.Add(this.label2);
             this.grb_AccountInfo.Controls.Add(this.label1);
-            this.grb_AccountInfo.Location = new System.Drawing.Point(12, 23);
+            this.grb_AccountInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grb_AccountInfo.Location = new System.Drawing.Point(12, 144);
             this.grb_AccountInfo.Name = "grb_AccountInfo";
-            this.grb_AccountInfo.Size = new System.Drawing.Size(442, 271);
+            this.grb_AccountInfo.Size = new System.Drawing.Size(470, 298);
             this.grb_AccountInfo.TabIndex = 0;
             this.grb_AccountInfo.TabStop = false;
             this.grb_AccountInfo.Text = "Thông tin tài khoản";
@@ -77,82 +79,82 @@
             // cmb_Role
             // 
             this.cmb_Role.FormattingEnabled = true;
-            this.cmb_Role.Location = new System.Drawing.Point(335, 34);
+            this.cmb_Role.Location = new System.Drawing.Point(340, 51);
             this.cmb_Role.Name = "cmb_Role";
-            this.cmb_Role.Size = new System.Drawing.Size(67, 24);
-            this.cmb_Role.TabIndex = 9;
+            this.cmb_Role.Size = new System.Drawing.Size(108, 28);
+            this.cmb_Role.TabIndex = 2;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(247, 40);
+            this.label4.Location = new System.Drawing.Point(281, 59);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 16);
+            this.label4.Size = new System.Drawing.Size(43, 20);
             this.label4.TabIndex = 8;
             this.label4.Text = "Role";
             // 
             // cmb_Employee
             // 
             this.cmb_Employee.FormattingEnabled = true;
-            this.cmb_Employee.Location = new System.Drawing.Point(112, 210);
+            this.cmb_Employee.Location = new System.Drawing.Point(113, 236);
             this.cmb_Employee.Name = "cmb_Employee";
-            this.cmb_Employee.Size = new System.Drawing.Size(236, 24);
-            this.cmb_Employee.TabIndex = 7;
+            this.cmb_Employee.Size = new System.Drawing.Size(236, 28);
+            this.cmb_Employee.TabIndex = 5;
             // 
             // txt_Password
             // 
-            this.txt_Password.Location = new System.Drawing.Point(112, 153);
+            this.txt_Password.Location = new System.Drawing.Point(112, 174);
             this.txt_Password.Name = "txt_Password";
-            this.txt_Password.Size = new System.Drawing.Size(180, 22);
-            this.txt_Password.TabIndex = 6;
+            this.txt_Password.Size = new System.Drawing.Size(180, 27);
+            this.txt_Password.TabIndex = 4;
             // 
             // txt_Username
             // 
-            this.txt_Username.Location = new System.Drawing.Point(112, 95);
+            this.txt_Username.Location = new System.Drawing.Point(113, 110);
             this.txt_Username.Name = "txt_Username";
-            this.txt_Username.Size = new System.Drawing.Size(180, 22);
-            this.txt_Username.TabIndex = 5;
+            this.txt_Username.Size = new System.Drawing.Size(180, 27);
+            this.txt_Username.TabIndex = 3;
             // 
             // txt_ID
             // 
-            this.txt_ID.Location = new System.Drawing.Point(112, 34);
+            this.txt_ID.Location = new System.Drawing.Point(112, 52);
             this.txt_ID.Name = "txt_ID";
-            this.txt_ID.Size = new System.Drawing.Size(100, 22);
-            this.txt_ID.TabIndex = 4;
+            this.txt_ID.Size = new System.Drawing.Size(100, 27);
+            this.txt_ID.TabIndex = 1;
             // 
             // Mã
             // 
             this.Mã.AutoSize = true;
-            this.Mã.Location = new System.Drawing.Point(24, 40);
+            this.Mã.Location = new System.Drawing.Point(24, 59);
             this.Mã.Name = "Mã";
-            this.Mã.Size = new System.Drawing.Size(26, 16);
+            this.Mã.Size = new System.Drawing.Size(32, 20);
             this.Mã.TabIndex = 3;
             this.Mã.Text = "Mã";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 218);
+            this.label3.Location = new System.Drawing.Point(24, 244);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 16);
+            this.label3.Size = new System.Drawing.Size(83, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Nhân viên";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 159);
+            this.label2.Location = new System.Drawing.Point(24, 181);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 16);
+            this.label2.Size = new System.Drawing.Size(77, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Mật khẩu";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 101);
+            this.label1.Location = new System.Drawing.Point(24, 117);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 16);
+            this.label1.Size = new System.Drawing.Size(81, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tài khoản";
             // 
@@ -167,58 +169,14 @@
             this.col_Username,
             this.col_EmployeeName,
             this.col_Role});
-            this.dgv_AccountList.Location = new System.Drawing.Point(460, 23);
+            this.dgv_AccountList.Location = new System.Drawing.Point(488, 144);
             this.dgv_AccountList.Name = "dgv_AccountList";
             this.dgv_AccountList.ReadOnly = true;
             this.dgv_AccountList.RowHeadersWidth = 51;
             this.dgv_AccountList.RowTemplate.Height = 24;
-            this.dgv_AccountList.Size = new System.Drawing.Size(571, 342);
+            this.dgv_AccountList.Size = new System.Drawing.Size(601, 364);
             this.dgv_AccountList.TabIndex = 1;
             this.dgv_AccountList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_AccountList_CellClick);
-            // 
-            // btn_Add
-            // 
-            this.btn_Add.Location = new System.Drawing.Point(27, 313);
-            this.btn_Add.Name = "btn_Add";
-            this.btn_Add.Size = new System.Drawing.Size(78, 43);
-            this.btn_Add.TabIndex = 10;
-            this.btn_Add.Text = "Thêm";
-            this.btn_Add.UseVisualStyleBackColor = true;
-            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
-            // 
-            // btn_Permission
-            // 
-            this.btn_Permission.Location = new System.Drawing.Point(138, 313);
-            this.btn_Permission.Name = "btn_Permission";
-            this.btn_Permission.Size = new System.Drawing.Size(78, 43);
-            this.btn_Permission.TabIndex = 11;
-            this.btn_Permission.Text = "Cấp quyền";
-            this.btn_Permission.UseVisualStyleBackColor = true;
-            this.btn_Permission.Click += new System.EventHandler(this.btn_Permisson_Click);
-            // 
-            // btn_Disable
-            // 
-            this.btn_Disable.Location = new System.Drawing.Point(251, 313);
-            this.btn_Disable.Name = "btn_Disable";
-            this.btn_Disable.Size = new System.Drawing.Size(78, 43);
-            this.btn_Disable.TabIndex = 13;
-            this.btn_Disable.Text = "Vô hiệu";
-            this.btn_Disable.UseVisualStyleBackColor = true;
-            this.btn_Disable.Click += new System.EventHandler(this.btn_Disable_Click);
-            // 
-            // btn_Back
-            // 
-            this.btn_Back.Location = new System.Drawing.Point(360, 313);
-            this.btn_Back.Name = "btn_Back";
-            this.btn_Back.Size = new System.Drawing.Size(78, 43);
-            this.btn_Back.TabIndex = 14;
-            this.btn_Back.Text = "Quay lại";
-            this.btn_Back.UseVisualStyleBackColor = true;
-            this.btn_Back.Click += new System.EventHandler(this.btn_Back_Click);
-            // 
-            // err_Warning
-            // 
-            this.err_Warning.ContainerControl = this;
             // 
             // col_ID
             // 
@@ -248,11 +206,70 @@
             this.col_Role.Name = "col_Role";
             this.col_Role.ReadOnly = true;
             // 
+            // btn_Add
+            // 
+            this.btn_Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Add.Location = new System.Drawing.Point(12, 465);
+            this.btn_Add.Name = "btn_Add";
+            this.btn_Add.Size = new System.Drawing.Size(92, 43);
+            this.btn_Add.TabIndex = 6;
+            this.btn_Add.Text = "Thêm";
+            this.btn_Add.UseVisualStyleBackColor = true;
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
+            // 
+            // btn_Permission
+            // 
+            this.btn_Permission.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Permission.Location = new System.Drawing.Point(124, 465);
+            this.btn_Permission.Name = "btn_Permission";
+            this.btn_Permission.Size = new System.Drawing.Size(107, 43);
+            this.btn_Permission.TabIndex = 7;
+            this.btn_Permission.Text = "Cấp quyền";
+            this.btn_Permission.UseVisualStyleBackColor = true;
+            this.btn_Permission.Click += new System.EventHandler(this.btn_Permisson_Click);
+            // 
+            // btn_Disable
+            // 
+            this.btn_Disable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Disable.Location = new System.Drawing.Point(263, 465);
+            this.btn_Disable.Name = "btn_Disable";
+            this.btn_Disable.Size = new System.Drawing.Size(91, 43);
+            this.btn_Disable.TabIndex = 8;
+            this.btn_Disable.Text = "Vô hiệu";
+            this.btn_Disable.UseVisualStyleBackColor = true;
+            this.btn_Disable.Click += new System.EventHandler(this.btn_Disable_Click);
+            // 
+            // btn_Back
+            // 
+            this.btn_Back.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Back.Location = new System.Drawing.Point(383, 465);
+            this.btn_Back.Name = "btn_Back";
+            this.btn_Back.Size = new System.Drawing.Size(99, 43);
+            this.btn_Back.TabIndex = 9;
+            this.btn_Back.Text = "Quay lại";
+            this.btn_Back.UseVisualStyleBackColor = true;
+            this.btn_Back.Click += new System.EventHandler(this.btn_Back_Click);
+            // 
+            // err_Warning
+            // 
+            this.err_Warning.ContainerControl = this;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(357, 45);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(387, 39);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "QUẢN LÝ TÀI KHOẢN ";
+            // 
             // frm_AccountAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1042, 377);
+            this.ClientSize = new System.Drawing.Size(1101, 539);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btn_Back);
             this.Controls.Add(this.btn_Disable);
             this.Controls.Add(this.btn_Permission);
@@ -260,12 +277,14 @@
             this.Controls.Add(this.dgv_AccountList);
             this.Controls.Add(this.grb_AccountInfo);
             this.Name = "frm_AccountAdd";
-            this.Text = "THÊM TÀI KHOẢN";
+            this.Text = "Account Management";
+            this.Load += new System.EventHandler(this.frm_AccountAdd_Load);
             this.grb_AccountInfo.ResumeLayout(false);
             this.grb_AccountInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_AccountList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.err_Warning)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -292,5 +311,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Username;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_EmployeeName;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Role;
+        private System.Windows.Forms.Label label5;
     }
 }
