@@ -403,6 +403,7 @@
             // 
             // txt_Total
             // 
+            this.txt_Total.Enabled = false;
             this.txt_Total.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Total.Location = new System.Drawing.Point(120, 289);
             this.txt_Total.Margin = new System.Windows.Forms.Padding(4);
@@ -464,6 +465,7 @@
             // 
             // list_SeatSelected
             // 
+            this.list_SeatSelected.Enabled = false;
             this.list_SeatSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.list_SeatSelected.FormattingEnabled = true;
             this.list_SeatSelected.ItemHeight = 24;
@@ -487,6 +489,7 @@
             // 
             // txt_Time
             // 
+            this.txt_Time.Enabled = false;
             this.txt_Time.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Time.Location = new System.Drawing.Point(123, 114);
             this.txt_Time.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -497,6 +500,7 @@
             // 
             // txt_Date
             // 
+            this.txt_Date.Enabled = false;
             this.txt_Date.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Date.Location = new System.Drawing.Point(123, 74);
             this.txt_Date.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -507,6 +511,7 @@
             // 
             // txt_MovieTitle
             // 
+            this.txt_MovieTitle.Enabled = false;
             this.txt_MovieTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_MovieTitle.Location = new System.Drawing.Point(123, 32);
             this.txt_MovieTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -587,11 +592,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(459, 46);
+            this.label6.Location = new System.Drawing.Point(466, 46);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(614, 38);
+            this.label6.Size = new System.Drawing.Size(584, 38);
             this.label6.TabIndex = 9;
-            this.label6.Text = "WELCOME TO 2_PILLARS\'S CINEMA";
+            this.label6.Text = "WELCOME TO 2_PILLARS CINEMA";
             // 
             // frm_BookingTicketsUI
             // 
