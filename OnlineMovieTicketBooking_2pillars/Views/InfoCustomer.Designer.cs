@@ -43,6 +43,7 @@
             this.btn_Continue = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.err_Warning = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btn_Cancel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.err_Warning)).BeginInit();
             this.SuspendLayout();
@@ -150,7 +151,7 @@
             // btn_Continue
             // 
             this.btn_Continue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Continue.Location = new System.Drawing.Point(165, 318);
+            this.btn_Continue.Location = new System.Drawing.Point(119, 318);
             this.btn_Continue.Name = "btn_Continue";
             this.btn_Continue.Size = new System.Drawing.Size(107, 37);
             this.btn_Continue.TabIndex = 4;
@@ -172,9 +173,21 @@
             // 
             this.err_Warning.ContainerControl = this;
             // 
+            // btn_Cancel
+            // 
+            this.btn_Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Cancel.Location = new System.Drawing.Point(258, 318);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(107, 37);
+            this.btn_Cancel.TabIndex = 4;
+            this.btn_Cancel.Text = "Huỷ bỏ ";
+            this.btn_Cancel.UseVisualStyleBackColor = true;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
+            // 
             // frm_InfoCustomer
             // 
             this.ClientSize = new System.Drawing.Size(458, 372);
+            this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.btn_Continue);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label6);
@@ -205,5 +218,6 @@
         private System.Windows.Forms.Button btn_Continue;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ErrorProvider err_Warning;
+        private System.Windows.Forms.Button btn_Cancel;
     }
 }

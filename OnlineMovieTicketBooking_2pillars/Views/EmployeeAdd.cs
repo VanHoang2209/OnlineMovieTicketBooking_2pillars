@@ -100,6 +100,11 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                 err_Warning.SetError(txt_Phone, "Số điện thoại không được để trống!");
                 return false;
             }
+            if (txt_Phone.Text.Any(Char.IsLetter))
+            {
+                err_Warning.SetError(txt_Phone, "Số điện thoại phải là số!");
+                return false;
+            }
             if (cmb_Position.SelectedIndex == 0)
             {
                 err_Warning.SetError(cmb_Position, "Vui lòng chọn chức vụ!");

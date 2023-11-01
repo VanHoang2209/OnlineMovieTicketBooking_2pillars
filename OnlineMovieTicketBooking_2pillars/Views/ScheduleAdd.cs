@@ -130,54 +130,75 @@ namespace OnlineMovieTicketBooking_2pillars.Views
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-            if (CheckInput())
+            try
             {
-                int id = int.Parse(txt_ScheduleID.Text);
-                ScheduledMovie existingSchedule = context.ScheduledMovies.FirstOrDefault(s => s.ID == id);
-                if (existingSchedule != null)
+                if (CheckInput())
                 {
-                    using (var dbContext = new MovieDBContext())
+                    int id = int.Parse(txt_ScheduleID.Text);
+                    ScheduledMovie existingSchedule = context.ScheduledMovies.FirstOrDefault(s => s.ID == id);
+                    if (existingSchedule != null)
                     {
-                        foreach (var item in dbContext.ScheduledMovies)
+                        using (var dbContext = new MovieDBContext())
                         {
-                            if (item.Date == txt_Date.Text && item.Time == txt_Time.Text)
-                                throw new Exception("Lịch chiếu bị trùng!");
+                            foreach (var item in dbContext.ScheduledMovies)
+                            {
+                                if (item.Date == txt_Date.Text && item.Time == txt_Time.Text)
+                                    throw new Exception("Lịch chiếu bị trùng!");
+                            }
                         }
+                        existingSchedule.MovieID = int.Parse(cmb_MovieName.SelectedValue.ToString());
+                        existingSchedule.Date = txt_Date.Text;
+                        existingSchedule.Time = txt_Time.Text;
+                        context.SaveChanges();
+                        MessageBox.Show("Sửa thông tin thành công!");
+
+                        List<ScheduledMovie> listSchedule = context.ScheduledMovies.Include("Movie").ToList();
+                        BindGrid(listSchedule);
                     }
-                    existingSchedule.MovieID = int.Parse(cmb_MovieName.SelectedValue.ToString());
-                    existingSchedule.Date = txt_Date.Text;
-                    existingSchedule.Time = txt_Time.Text;
-                    context.SaveChanges();
-                    MessageBox.Show("Sửa thông tin thành công!");
+                    else
+                        MessageBox.Show("Mã lịch chiếu không tồn tại!");
                 }
-                else
-                    MessageBox.Show("Mã lịch chiếu không tồn tại!");
             }
-            List<ScheduledMovie> listSchedule = context.ScheduledMovies.Include("Movie").ToList();
-            BindGrid(listSchedule);
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
             if (CheckInput2())
             {
-                int id = int.Parse(txt_ScheduleID.Text);
-                ScheduledMovie existingSchedule = context.ScheduledMovies.FirstOrDefault(s => s.ID == id);
-                if (existingSchedule != null)
+                try
                 {
-                    DialogResult dr = MessageBox.Show("Bạn có muốn xóa không?", "CẢNH BÁO", MessageBoxButtons.YesNo);
-                    if (dr == DialogResult.Yes)
+                    int id = int.Parse(txt_ScheduleID.Text);
+                    ScheduledMovie existingSchedule = context.ScheduledMovies.FirstOrDefault(s => s.ID == id);
+                    if (existingSchedule != null)
                     {
-                        context.ScheduledMovies.Remove(existingSchedule);
-                        context.SaveChanges();
-                        MessageBox.Show("Xóa thông tin thành công!");
+                        Reservation reser = context.Reservations.FirstOrDefault(p => p.ScheduleID == id);
+                        if (reser != null)
+                            throw new Exception("Lịch chiếu đã được đặt vé! Không thể xóa!");
+                        else
+                        {
+                            DialogResult dr = MessageBox.Show("Bạn có muốn xóa không?", "CẢNH BÁO", MessageBoxButtons.YesNo);
+                            if (dr == DialogResult.Yes)
+                            {
+                                context.ScheduledMovies.Remove(existingSchedule);
+                                context.SaveChanges();
+                                MessageBox.Show("Xóa thông tin thành công!");
+                                List<ScheduledMovie> listSchedule = context.ScheduledMovies.Include("Movie").ToList();
+                                BindGrid(listSchedule);
+                            }
+                        }
                     }
+                    else
+                        MessageBox.Show("Mã lịch chiếu không tồn tại!");
                 }
-                else
-                    MessageBox.Show("Mã lịch chiếu không tồn tại!");
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            List<ScheduledMovie> listSchedule = context.ScheduledMovies.Include("Movie").ToList();
-            BindGrid(listSchedule);
         }
 
         private void dgv_ScheduleList_CellClick(object sender, DataGridViewCellEventArgs e)

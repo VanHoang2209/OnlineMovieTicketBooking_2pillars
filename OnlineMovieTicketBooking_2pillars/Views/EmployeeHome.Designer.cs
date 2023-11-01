@@ -40,7 +40,7 @@
             // 
             // btn_MovieAdd
             // 
-            this.btn_MovieAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_MovieAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_MovieAdd.Location = new System.Drawing.Point(36, 183);
             this.btn_MovieAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_MovieAdd.Name = "btn_MovieAdd";
@@ -52,7 +52,7 @@
             // 
             // btn_Logout
             // 
-            this.btn_Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Logout.Location = new System.Drawing.Point(322, 315);
             this.btn_Logout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Logout.Name = "btn_Logout";
@@ -64,7 +64,7 @@
             // 
             // btn_AddSchedule
             // 
-            this.btn_AddSchedule.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AddSchedule.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AddSchedule.Location = new System.Drawing.Point(224, 183);
             this.btn_AddSchedule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_AddSchedule.Name = "btn_AddSchedule";
@@ -76,7 +76,7 @@
             // 
             // btn_EmployeeAdd
             // 
-            this.btn_EmployeeAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_EmployeeAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_EmployeeAdd.Location = new System.Drawing.Point(427, 184);
             this.btn_EmployeeAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_EmployeeAdd.Name = "btn_EmployeeAdd";
@@ -88,7 +88,7 @@
             // 
             // btn_AccountAdd
             // 
-            this.btn_AccountAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AccountAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AccountAdd.Location = new System.Drawing.Point(614, 184);
             this.btn_AccountAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_AccountAdd.Name = "btn_AccountAdd";
@@ -100,7 +100,7 @@
             // 
             // btn_PasswordChange
             // 
-            this.btn_PasswordChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_PasswordChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_PasswordChange.Location = new System.Drawing.Point(519, 314);
             this.btn_PasswordChange.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_PasswordChange.Name = "btn_PasswordChange";
@@ -112,7 +112,7 @@
             // 
             // btn_Check
             // 
-            this.btn_Check.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Check.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Check.Location = new System.Drawing.Point(122, 314);
             this.btn_Check.Name = "btn_Check";
             this.btn_Check.Size = new System.Drawing.Size(140, 95);
@@ -127,7 +127,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(279, 64);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(234, 39);
+            this.label1.Size = new System.Drawing.Size(227, 38);
             this.label1.TabIndex = 7;
             this.label1.Text = "CHỨC NĂNG";
             // 

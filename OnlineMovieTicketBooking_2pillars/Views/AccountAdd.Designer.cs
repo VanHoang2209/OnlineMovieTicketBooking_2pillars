@@ -222,7 +222,7 @@
             this.btn_Permission.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Permission.Location = new System.Drawing.Point(124, 465);
             this.btn_Permission.Name = "btn_Permission";
-            this.btn_Permission.Size = new System.Drawing.Size(107, 43);
+            this.btn_Permission.Size = new System.Drawing.Size(112, 43);
             this.btn_Permission.TabIndex = 7;
             this.btn_Permission.Text = "Cấp quyền";
             this.btn_Permission.UseVisualStyleBackColor = true;
@@ -260,7 +260,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(357, 45);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(387, 39);
+            this.label5.Size = new System.Drawing.Size(375, 38);
             this.label5.TabIndex = 15;
             this.label5.Text = "QUẢN LÝ TÀI KHOẢN ";
             // 

@@ -339,7 +339,9 @@ namespace OnlineMovieTicketBooking_2pillars.Views
         {
             try
             {
-                if (InputChecked())
+                if (InputChecked() == false)
+                    throw new Exception("Vui lòng chọn đầy đủ thông tin trước khi Xác nhận!");
+                else 
                 {
                     using (var dbContext = new MovieDBContext())
                     {
@@ -397,7 +399,6 @@ namespace OnlineMovieTicketBooking_2pillars.Views
 
 
                             reserID = reservation.ID;
-
                             MessageBox.Show("Đặt vé thành công!");
 
                             DefaultSetting();
@@ -452,6 +453,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
         #region "Input Checked"
         private bool InputChecked()
         {
+            
             err_Warning.Clear();
             if (string.IsNullOrEmpty(txt_MovieTitle.Text) && string.IsNullOrWhiteSpace(txt_MovieTitle.Text))
             {

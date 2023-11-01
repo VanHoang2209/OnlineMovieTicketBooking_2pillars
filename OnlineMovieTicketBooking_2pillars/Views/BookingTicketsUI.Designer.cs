@@ -92,6 +92,7 @@
             this.textBox1.Location = new System.Drawing.Point(9, 37);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(1064, 41);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "MÀN HÌNH";
@@ -156,6 +157,7 @@
             this.textBox6.Location = new System.Drawing.Point(99, 16);
             this.textBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(105, 30);
             this.textBox6.TabIndex = 6;
             this.textBox6.Text = "Ghi chú\r\n";
@@ -403,11 +405,11 @@
             // 
             // txt_Total
             // 
-            this.txt_Total.Enabled = false;
             this.txt_Total.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Total.Location = new System.Drawing.Point(120, 289);
             this.txt_Total.Margin = new System.Windows.Forms.Padding(4);
             this.txt_Total.Name = "txt_Total";
+            this.txt_Total.ReadOnly = true;
             this.txt_Total.Size = new System.Drawing.Size(284, 29);
             this.txt_Total.TabIndex = 1;
             this.txt_Total.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -465,7 +467,6 @@
             // 
             // list_SeatSelected
             // 
-            this.list_SeatSelected.Enabled = false;
             this.list_SeatSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.list_SeatSelected.FormattingEnabled = true;
             this.list_SeatSelected.ItemHeight = 24;
@@ -489,33 +490,33 @@
             // 
             // txt_Time
             // 
-            this.txt_Time.Enabled = false;
             this.txt_Time.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Time.Location = new System.Drawing.Point(123, 114);
             this.txt_Time.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Time.Name = "txt_Time";
+            this.txt_Time.ReadOnly = true;
             this.txt_Time.Size = new System.Drawing.Size(281, 29);
             this.txt_Time.TabIndex = 1;
             this.txt_Time.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_Date
             // 
-            this.txt_Date.Enabled = false;
             this.txt_Date.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_Date.Location = new System.Drawing.Point(123, 74);
             this.txt_Date.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Date.Name = "txt_Date";
+            this.txt_Date.ReadOnly = true;
             this.txt_Date.Size = new System.Drawing.Size(281, 29);
             this.txt_Date.TabIndex = 1;
             this.txt_Date.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_MovieTitle
             // 
-            this.txt_MovieTitle.Enabled = false;
             this.txt_MovieTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_MovieTitle.Location = new System.Drawing.Point(123, 32);
             this.txt_MovieTitle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_MovieTitle.Name = "txt_MovieTitle";
+            this.txt_MovieTitle.ReadOnly = true;
             this.txt_MovieTitle.Size = new System.Drawing.Size(281, 29);
             this.txt_MovieTitle.TabIndex = 1;
             this.txt_MovieTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

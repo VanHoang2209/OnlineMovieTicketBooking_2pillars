@@ -153,7 +153,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                             RoleID = int.Parse(cmb_Role.SelectedValue.ToString()),
                             Username = txt_Username.Text,
                             Password = BCrypt.Net.BCrypt.HashPassword(txt_Password.Text),
-                        UserID = int.Parse(cmb_Employee.SelectedValue.ToString())
+                            UserID = int.Parse(cmb_Employee.SelectedValue.ToString())
                         };
                         context.Accounts.Add(account);
                         context.SaveChanges();
