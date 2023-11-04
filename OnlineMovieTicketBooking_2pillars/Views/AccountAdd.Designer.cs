@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.grb_AccountInfo = new System.Windows.Forms.GroupBox();
-            this.cmb_Role = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.cmb_Employee = new System.Windows.Forms.ComboBox();
             this.txt_Password = new System.Windows.Forms.TextBox();
             this.txt_Username = new System.Windows.Forms.TextBox();
@@ -47,8 +45,6 @@
             this.col_Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_Add = new System.Windows.Forms.Button();
             this.btn_Permission = new System.Windows.Forms.Button();
-            this.btn_Disable = new System.Windows.Forms.Button();
-            this.btn_Back = new System.Windows.Forms.Button();
             this.err_Warning = new System.Windows.Forms.ErrorProvider(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.grb_AccountInfo.SuspendLayout();
@@ -58,8 +54,6 @@
             // 
             // grb_AccountInfo
             // 
-            this.grb_AccountInfo.Controls.Add(this.cmb_Role);
-            this.grb_AccountInfo.Controls.Add(this.label4);
             this.grb_AccountInfo.Controls.Add(this.cmb_Employee);
             this.grb_AccountInfo.Controls.Add(this.txt_Password);
             this.grb_AccountInfo.Controls.Add(this.txt_Username);
@@ -152,7 +146,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 117);
+            this.label1.Location = new System.Drawing.Point(20, 117);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 20);
             this.label1.TabIndex = 0;
@@ -228,7 +222,7 @@
             this.btn_Permission.UseVisualStyleBackColor = true;
             this.btn_Permission.Click += new System.EventHandler(this.btn_Permisson_Click);
             // 
-            // btn_Disable
+            // err_Warning
             // 
             this.btn_Disable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Disable.Location = new System.Drawing.Point(263, 465);
@@ -254,15 +248,33 @@
             // 
             this.err_Warning.ContainerControl = this;
             // 
-            // label5
+            // col_ID
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(357, 45);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(375, 38);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "QUẢN LÝ TÀI KHOẢN ";
+            this.col_ID.HeaderText = "Mã";
+            this.col_ID.MinimumWidth = 6;
+            this.col_ID.Name = "col_ID";
+            this.col_ID.ReadOnly = true;
+            // 
+            // col_Username
+            // 
+            this.col_Username.HeaderText = "Tên tài khoản";
+            this.col_Username.MinimumWidth = 6;
+            this.col_Username.Name = "col_Username";
+            this.col_Username.ReadOnly = true;
+            // 
+            // col_EmployeeName
+            // 
+            this.col_EmployeeName.HeaderText = "Tên nhân viên";
+            this.col_EmployeeName.MinimumWidth = 6;
+            this.col_EmployeeName.Name = "col_EmployeeName";
+            this.col_EmployeeName.ReadOnly = true;
+            // 
+            // col_Role
+            // 
+            this.col_Role.HeaderText = "Role";
+            this.col_Role.MinimumWidth = 6;
+            this.col_Role.Name = "col_Role";
+            this.col_Role.ReadOnly = true;
             // 
             // frm_AccountAdd
             // 
@@ -271,7 +283,6 @@
             this.ClientSize = new System.Drawing.Size(1101, 539);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btn_Back);
-            this.Controls.Add(this.btn_Disable);
             this.Controls.Add(this.btn_Permission);
             this.Controls.Add(this.btn_Add);
             this.Controls.Add(this.dgv_AccountList);
@@ -295,22 +306,18 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgv_AccountList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_Role;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmb_Employee;
         private System.Windows.Forms.TextBox txt_Password;
         private System.Windows.Forms.TextBox txt_Username;
         private System.Windows.Forms.TextBox txt_ID;
         private System.Windows.Forms.Button btn_Add;
         private System.Windows.Forms.Button btn_Permission;
-        private System.Windows.Forms.Button btn_Disable;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btn_Back;
-        private System.Windows.Forms.ComboBox cmb_Role;
         private System.Windows.Forms.ErrorProvider err_Warning;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Username;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_EmployeeName;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Role;
-        private System.Windows.Forms.Label label5;
     }
 }

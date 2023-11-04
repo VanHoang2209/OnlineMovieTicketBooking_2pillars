@@ -1,4 +1,6 @@
-﻿using System;
+﻿using OnlineMovieTicketBooking_2pillars.Models;
+using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

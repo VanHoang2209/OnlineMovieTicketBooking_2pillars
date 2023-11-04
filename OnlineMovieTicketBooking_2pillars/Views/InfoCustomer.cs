@@ -97,7 +97,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
         {
             try
             {
-                Application.Exit();
+                Application.Restart();
             }
             catch(Exception ex)
             {

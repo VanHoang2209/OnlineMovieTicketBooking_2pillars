@@ -8,7 +8,7 @@ namespace OnlineMovieTicketBooking_2pillars.Models
     public partial class MovieDBContext : DbContext
     {
         public MovieDBContext()
-            : base("name=MovieDBContext1")
+            : base("name=MovieDBContext")
         {
         }
 
@@ -78,7 +78,7 @@ namespace OnlineMovieTicketBooking_2pillars.Models
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Role>()
-                .HasMany(e => e.Accounts)
+                .HasMany(e => e.Employees)
                 .WithRequired(e => e.Role)
                 .WillCascadeOnDelete(false);
 

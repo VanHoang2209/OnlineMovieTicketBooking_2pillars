@@ -33,12 +33,10 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                 SeatInit();
                 DefaultSetting();
 
-
                 using (var dbContext = new MovieDBContext())
                 {
                     cmb_MovieTitle.DataSource = dbContext.Movies.Select(c => new { c.ID, c.Name }).ToList();
                 }
-
             }
             catch (Exception ex)
             {
@@ -103,7 +101,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                 btn.BackColor = Color.Yellow;
 
             }
-            else if (id > 20 && id <= 25)
+            else if (id > 20 && id <= 23)
             {
                 btn.Size = new Size(116, 38);
                 btn.BackColor = Color.Aqua;
@@ -150,7 +148,6 @@ namespace OnlineMovieTicketBooking_2pillars.Views
 
                 // Info selected
                 list_SeatSelected.Items.Add(btn.Text);
-
             }
             else if (btn.BackColor == Color.Aqua)
             {
@@ -219,7 +216,6 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             cmb_ShowTime.DisplayMember = "FullDateTime";
             cmb_ShowTime.ValueMember = "ID";
             cmb_ShowTime.DropDownStyle = ComboBoxStyle.DropDownList;
-
         }
         private void cmb_MovieTitle_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -266,8 +262,6 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                     txt_Time.Text = showTime;
                     txt_Date.Text = showDate;
                     txt_MovieTitle.Text = cmb_MovieTitle.Text;
-
-
                 }
                 ResetSeats(movieID, idScheduledMovie);
             }
@@ -297,7 +291,6 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                     total = 0;
                     txt_Total.Text = total.ToString();
                 }
-
                 else
                 {
                     // Đặt màu lại cho tất cả ghế trước khi cập nhật lại màu của các ghế đã đặt
@@ -381,7 +374,6 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                                 ScheduleID = bookingInfo.ScheduledMovieID,
                                 TotalPrice = bookingInfo.TotalPrice
                             };
-
                             foreach (var seatName in bookingInfo.SelectedSeats)
                             {
                                 var seat = dbContext.Seats.SingleOrDefault(s => s.Name == seatName);
@@ -393,10 +385,8 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                                     });
                                 }
                             }
-
                             dbContext.Reservations.Add(reservation);
                             dbContext.SaveChanges();
-
 
                             reserID = reservation.ID;
                             MessageBox.Show("Đặt vé thành công!");
@@ -404,7 +394,6 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                             DefaultSetting();
                             UpdateButtonState();
                             isBookingSucessful = true;
-
                         }
                     }
                 }
@@ -426,7 +415,6 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                 if (isBookingSucessful == true)
                 {
                     MessageBox.Show("Bạn đã thanh toán thành công");
-
 
                     frm_TicketsUI frmTickets = new frm_TicketsUI(this);
                     frmTickets.SetTicketInformation(reserID.ToString(), cmb_MovieTitle.Text, cmb_ShowTime.Text
@@ -482,13 +470,18 @@ namespace OnlineMovieTicketBooking_2pillars.Views
         private void btn_Close_Click(object sender, EventArgs e)
         {
             Application.Exit();
-            this.Close();
         }
         private void menuItem_Login_Click(object sender, EventArgs e)
         {
             this.Hide();
             frm_Login frm = new frm_Login();
             frm.Show();
+        }
+
+        private void đăngNhậpToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frm_Login frm_Login = new frm_Login();
+            frm_Login.ShowDialog();
         }
     }
 }

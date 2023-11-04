@@ -12,6 +12,7 @@ namespace OnlineMovieTicketBooking_2pillars
         public static int UserID { get; set; }
         public static int UserRole { get; set; }
         public static int AccountID { get; set; }
+        public static int ReserID { get; set; }
     }
     internal static class Program
     {

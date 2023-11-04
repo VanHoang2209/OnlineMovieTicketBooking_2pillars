@@ -101,7 +101,6 @@
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\MovieDBContext.cs" />
-    <Compile Include="Models\Position.cs" />
     <Compile Include="Models\Reservation.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\ScheduledMovie.cs" />
@@ -145,12 +144,6 @@
     </Compile>
     <Compile Include="Views\PasswordChange.Designer.cs">
       <DependentUpon>PasswordChange.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ReserChecking.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\ReserChecking.Designer.cs">
-      <DependentUpon>ReserChecking.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ScheduleAdd.cs">
       <SubType>Form</SubType>
@@ -202,9 +195,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\PasswordChange.resx">
       <DependentUpon>PasswordChange.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\ReserChecking.resx">
-      <DependentUpon>ReserChecking.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ScheduleAdd.resx">
       <DependentUpon>ScheduleAdd.cs</DependentUpon>

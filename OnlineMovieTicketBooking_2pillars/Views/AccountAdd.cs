@@ -24,8 +24,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
         public frm_AccountAdd()
         {
             InitializeComponent();
-            FillRoleCombobox(listRole);
-            FillEmployeeCombobox(listEmployee);
+            //FillEmployeeCombobox(listEmployee);
             BindGrid(listAccount);
         }
 
@@ -48,23 +47,14 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             }
         }
 
-        private void FillEmployeeCombobox(List<Employee> listEmployee)
-        {
-            listEmployee.Insert(0, new Employee());
-            this.cmb_Employee.DataSource = listEmployee;
-            this.cmb_Employee.DisplayMember = "FullName";
-            this.cmb_Employee.ValueMember = "ID";
-            this.cmb_Employee.DropDownStyle = ComboBoxStyle.DropDownList;
-        }
-
-        private void FillRoleCombobox(List<Role> listRole)
-        {
-            listRole.Insert(0, new Role());
-            this.cmb_Role.DataSource = listRole;
-            this.cmb_Role.DisplayMember = "Name";
-            this.cmb_Role.ValueMember = "ID";
-            this.cmb_Role.DropDownStyle = ComboBoxStyle.DropDownList;
-        }
+        //private void FillEmployeeCombobox(List<Employee> listEmployee)
+        //{
+        //    listEmployee.Insert(0, new Employee());
+        //    this.cmb_Employee.DataSource = listEmployee;
+        //    this.cmb_Employee.DisplayMember = "FullName";
+        //    this.cmb_Employee.ValueMember = "ID";
+        //    this.cmb_Employee.DropDownStyle = ComboBoxStyle.DropDownList;
+        //}
 
         private bool CheckInput()
         {
