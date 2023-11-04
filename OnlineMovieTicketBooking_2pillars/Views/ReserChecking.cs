@@ -28,13 +28,13 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             {
                 int index = dgv_ReserList.Rows.Add();
                 dgv_ReserList.Rows[index].Cells[0].Value = item.ID;
-                dgv_ReserList.Rows[index].Cells[1].Value = item.ScheduledMovie.Movie.Name;
-                dgv_ReserList.Rows[index].Cells[2].Value = item.ScheduledMovie.Date;
-                dgv_ReserList.Rows[index].Cells[3].Value = item.ScheduledMovie.Time;
-                dgv_ReserList.Rows[index].Cells[4].Value = item.TotalPrice;
-                dgv_ReserList.Rows[index].Cells[5].Value = item.Customer.FullName;
-                dgv_ReserList.Rows[index].Cells[6].Value = item.Customer.Phone;
-                dgv_ReserList.Rows[index].Cells[7].Value = item.Customer.Email;
+                dgv_ReserList.Rows[index].Cells[1].Value = item.Customer.FullName;
+                dgv_ReserList.Rows[index].Cells[2].Value = item.Customer.Phone;
+                dgv_ReserList.Rows[index].Cells[3].Value = item.Customer.Email;
+                dgv_ReserList.Rows[index].Cells[4].Value = item.ScheduledMovie.Movie.Name;
+                dgv_ReserList.Rows[index].Cells[5].Value = item.ScheduledMovie.Date;
+                dgv_ReserList.Rows[index].Cells[6].Value = item.ScheduledMovie.Time;
+                dgv_ReserList.Rows[index].Cells[7].Value = item.TotalPrice;
             }
         }
         private void btn_Back_Click(object sender, EventArgs e)

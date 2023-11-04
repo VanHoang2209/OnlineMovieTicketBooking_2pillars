@@ -100,6 +100,11 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                 err_Warning.SetError(txt_Phone, "Số điện thoại không được để trống!");
                 return false;
             }
+            if (txt_Phone.Text.Any(Char.IsLetter))
+            {
+                err_Warning.SetError(txt_Phone, "Số điện thoại phải là số!");
+                return false;
+            }
             if (cmb_Position.SelectedIndex == 0)
             {
                 err_Warning.SetError(cmb_Position, "Vui lòng chọn chức vụ!");
@@ -119,12 +124,25 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             return true;
         }
 
+        //private bool CheckInput2()
+        //{
+        //    err_Warning.Clear();
+        //    if (string.IsNullOrEmpty(txt_ID.Text))
+        //    {
+        //        err_Warning.SetError(txt_ID, "Mã lịch chiếu không được để trống!");
+        //        return false;
+        //    }
+        //    return true;
+        //}
+
         private void btn_Update_Click(object sender, EventArgs e)
         {
             if (CheckInput())
             {
                 int id = int.Parse(txt_ID.Text);
                 Employee existingEmployee = context.Employees.FirstOrDefault(s => s.ID == id);
+                int tmp = existingEmployee.ID;
+                Account existingAccount = context.Accounts.FirstOrDefault(s => s.ID == tmp);
                 if (existingEmployee != null)
                 {
                     existingEmployee.FullName = txt_FullName.Text;

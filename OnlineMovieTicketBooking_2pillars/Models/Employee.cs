@@ -29,6 +29,10 @@ namespace OnlineMovieTicketBooking_2pillars.Models
 
         public int PosID { get; set; }
 
+        [Required]
+        [StringLength(50)]
+        public string Position { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Account> Accounts { get; set; }
 

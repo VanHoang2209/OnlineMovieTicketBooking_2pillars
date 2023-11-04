@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace OnlineMovieTicketBooking_2pillars.Views
 {
-    public partial class BookingTicketsUI : Form
+    public partial class frm_BookingTicketsUI : Form
     {
         private BookingInfo bookingInfo;
         private Customer customer;
@@ -18,7 +18,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
         private decimal total = 0;
         private bool isBookingSucessful = false;
 
-        public BookingTicketsUI()
+        public frm_BookingTicketsUI()
         {
             InitializeComponent();
             ControlSetting();
@@ -33,12 +33,10 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                 SeatInit();
                 DefaultSetting();
 
-
                 using (var dbContext = new MovieDBContext())
                 {
                     cmb_MovieTitle.DataSource = dbContext.Movies.Select(c => new { c.ID, c.Name }).ToList();
                 }
-
             }
             catch (Exception ex)
             {
@@ -103,7 +101,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                 btn.BackColor = Color.Yellow;
 
             }
-            else if (id > 20 && id <= 25)
+            else if (id > 20 && id <= 23)
             {
                 btn.Size = new Size(116, 38);
                 btn.BackColor = Color.Aqua;
@@ -150,7 +148,6 @@ namespace OnlineMovieTicketBooking_2pillars.Views
 
                 // Info selected
                 list_SeatSelected.Items.Add(btn.Text);
-
             }
             else if (btn.BackColor == Color.Aqua)
             {
@@ -208,7 +205,6 @@ namespace OnlineMovieTicketBooking_2pillars.Views
         }
         #endregion
 
-
         // Combobox Movie Handle
         #region "Combobox Movie and Combobox ScheduledMovie Handle"
         private void ControlSetting()
@@ -220,7 +216,6 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             cmb_ShowTime.DisplayMember = "FullDateTime";
             cmb_ShowTime.ValueMember = "ID";
             cmb_ShowTime.DropDownStyle = ComboBoxStyle.DropDownList;
-
         }
         private void cmb_MovieTitle_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -248,7 +243,6 @@ namespace OnlineMovieTicketBooking_2pillars.Views
         }
         #endregion
 
-
         // Groupbox Infor Selected
         #region "Groupbox infor selected"
         private void cmb_ShowTime_SelectedIndexChanged(object sender, EventArgs e)
@@ -268,8 +262,6 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                     txt_Time.Text = showTime;
                     txt_Date.Text = showDate;
                     txt_MovieTitle.Text = cmb_MovieTitle.Text;
-
-
                 }
                 ResetSeats(movieID, idScheduledMovie);
             }
@@ -299,7 +291,6 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                     total = 0;
                     txt_Total.Text = total.ToString();
                 }
-
                 else
                 {
                     // Đặt màu lại cho tất cả ghế trước khi cập nhật lại màu của các ghế đã đặt
@@ -335,15 +326,15 @@ namespace OnlineMovieTicketBooking_2pillars.Views
         }
         #endregion
 
-
-
         // Button Confirm
         #region "Button Confirm"
         public void Btn_Confirm_Click(object sender, EventArgs e)
         {
             try
             {
-                if (InputChecked())
+                if (InputChecked() == false)
+                    throw new Exception("Vui lòng chọn đầy đủ thông tin trước khi Xác nhận!");
+                else 
                 {
                     using (var dbContext = new MovieDBContext())
                     {
@@ -353,7 +344,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
 
                         if (result == DialogResult.Yes)
                         {
-                            var infoCustomerForm = new InfoCustomer(this);
+                            var infoCustomerForm = new frm_InfoCustomer(this);
                             result = infoCustomerForm.ShowDialog();
 
                             customer = new Customer
@@ -383,7 +374,6 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                                 ScheduleID = bookingInfo.ScheduledMovieID,
                                 TotalPrice = bookingInfo.TotalPrice
                             };
-
                             foreach (var seatName in bookingInfo.SelectedSeats)
                             {
                                 var seat = dbContext.Seats.SingleOrDefault(s => s.Name == seatName);
@@ -395,21 +385,49 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                                     });
                                 }
                             }
-
                             dbContext.Reservations.Add(reservation);
                             dbContext.SaveChanges();
 
-
                             reserID = reservation.ID;
-
                             MessageBox.Show("Đặt vé thành công!");
 
                             DefaultSetting();
                             UpdateButtonState();
                             isBookingSucessful = true;
-
                         }
                     }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        #endregion
+
+        // Button PayAway
+        #region "Button PayAway"
+        private void btn_PayAway_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Đặt vé thành công rồi mới được tiếp tục
+                if (isBookingSucessful == true)
+                {
+                    MessageBox.Show("Bạn đã thanh toán thành công");
+
+                    frm_TicketsUI frmTickets = new frm_TicketsUI(this);
+                    frmTickets.SetTicketInformation(reserID.ToString(), cmb_MovieTitle.Text, cmb_ShowTime.Text
+                                                    , customer.FullName, customer.Phone, customer.Email
+                                                    , bookingInfo.TotalPrice.ToString()
+                                                    , list_SeatSelected.Items.Cast<string>().ToList());
+
+                    frmTickets.SetListSeats(bookingInfo.SelectedSeats);
+                    frmTickets.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Hãy nhập đầy đủ thông tin trước khi thanh toán");
                 }
             }
             catch (Exception ex)
@@ -423,6 +441,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
         #region "Input Checked"
         private bool InputChecked()
         {
+            
             err_Warning.Clear();
             if (string.IsNullOrEmpty(txt_MovieTitle.Text) && string.IsNullOrWhiteSpace(txt_MovieTitle.Text))
             {
@@ -451,45 +470,18 @@ namespace OnlineMovieTicketBooking_2pillars.Views
         private void btn_Close_Click(object sender, EventArgs e)
         {
             Application.Exit();
-            this.Close();
         }
-
-        private void btn_Continue_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // Đặt vé thành công rồi mới được tiếp tục
-                if(isBookingSucessful == true)
-                {
-                    MessageBox.Show("Bạn đã thanh toán thành công");
-
-
-                    frm_TicketsUI frmTickets = new frm_TicketsUI(this);
-                    frmTickets.SetTicketInformation(reserID.ToString(), cmb_MovieTitle.Text, cmb_ShowTime.Text
-                                                    , customer.FullName, customer.Phone, customer.Email
-                                                    , bookingInfo.TotalPrice.ToString()
-                                                    , list_SeatSelected.Items.Cast<string>().ToList());
-
-                    frmTickets.SetListSeats(bookingInfo.SelectedSeats);
-                    frmTickets.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Hãy nhập đầy đủ thông tin trước khi thanh toán");
-                }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-           
-        }
-
         private void menuItem_Login_Click(object sender, EventArgs e)
         {
-                this.Hide();
-                frm_Login frm = new frm_Login();
-                frm.Show();
+            this.Hide();
+            frm_Login frm = new frm_Login();
+            frm.Show();
+        }
+
+        private void đăngNhậpToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frm_Login frm_Login = new frm_Login();
+            frm_Login.ShowDialog();
         }
     }
 }

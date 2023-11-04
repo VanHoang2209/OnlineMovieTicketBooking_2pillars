@@ -49,6 +49,11 @@
             this.btn_Add = new System.Windows.Forms.Button();
             this.err_Warning = new System.Windows.Forms.ErrorProvider(this.components);
             this.label5 = new System.Windows.Forms.Label();
+            this.cmb_Role = new System.Windows.Forms.ComboBox();
+            this.col_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grb_EmployeeInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_EmployeeList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.err_Warning)).BeginInit();
@@ -73,6 +78,15 @@
             this.grb_EmployeeInfo.TabIndex = 0;
             this.grb_EmployeeInfo.TabStop = false;
             this.grb_EmployeeInfo.Text = "Thông tin nhân viên";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(36, 243);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 20);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Chức vụ";
             // 
             // cmb_Position
             // 
@@ -253,6 +267,42 @@
             this.label5.TabIndex = 17;
             this.label5.Text = "QUẢN LÝ NHÂN VIÊN";
             // 
+            // cmb_Role
+            // 
+            this.cmb_Role.FormattingEnabled = true;
+            this.cmb_Role.Location = new System.Drawing.Point(173, 235);
+            this.cmb_Role.Name = "cmb_Role";
+            this.cmb_Role.Size = new System.Drawing.Size(164, 28);
+            this.cmb_Role.TabIndex = 7;
+            // 
+            // col_ID
+            // 
+            this.col_ID.HeaderText = "Mã nhân viên";
+            this.col_ID.MinimumWidth = 6;
+            this.col_ID.Name = "col_ID";
+            this.col_ID.ReadOnly = true;
+            // 
+            // col_FullName
+            // 
+            this.col_FullName.HeaderText = "Họ tên";
+            this.col_FullName.MinimumWidth = 6;
+            this.col_FullName.Name = "col_FullName";
+            this.col_FullName.ReadOnly = true;
+            // 
+            // col_Phone
+            // 
+            this.col_Phone.HeaderText = "Số điện thoại";
+            this.col_Phone.MinimumWidth = 6;
+            this.col_Phone.Name = "col_Phone";
+            this.col_Phone.ReadOnly = true;
+            // 
+            // col_Status
+            // 
+            this.col_Status.HeaderText = "Chức vụ";
+            this.col_Status.MinimumWidth = 6;
+            this.col_Status.Name = "col_Status";
+            this.col_Status.ReadOnly = true;
+            // 
             // frm_EmployeeAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -286,9 +336,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_ID;
         private System.Windows.Forms.DataGridView dgv_EmployeeList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_FullName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_Phone;
         private System.Windows.Forms.TextBox txt_Phone;
         private System.Windows.Forms.TextBox txt_FullName;
         private System.Windows.Forms.Button btn_Back;

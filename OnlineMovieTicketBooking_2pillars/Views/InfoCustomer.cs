@@ -13,15 +13,15 @@ using System.Text.RegularExpressions;
 
 namespace OnlineMovieTicketBooking_2pillars.Views
 {
-    public partial class InfoCustomer : Form
+    public partial class frm_InfoCustomer : Form
     {
         public string CustomerName { get; private set; }
         public string CustomerPhone { get; private set; }
         public string CustomerEmail { get; private set; }
 
 
-        private BookingTicketsUI bookingTicketsUI;
-        public InfoCustomer(BookingTicketsUI bookingTicketsUI)
+        private frm_BookingTicketsUI bookingTicketsUI;
+        public frm_InfoCustomer(frm_BookingTicketsUI bookingTicketsUI)
         {
             InitializeComponent();
             this.bookingTicketsUI = bookingTicketsUI;
@@ -30,7 +30,9 @@ namespace OnlineMovieTicketBooking_2pillars.Views
         {
             try
             {
-                if (InputChecked())
+                if (InputChecked() == false)
+                    throw new Exception("Vui lòng kiểm tra lại thông tin!");
+                else
                 {
                     CustomerName = txt_Name.Text;
                     CustomerPhone = txt_Phone.Text;
@@ -41,7 +43,7 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show(ex.Message);
             }
         }
         private void InfoCustomer_Load(object sender, EventArgs e)
@@ -59,6 +61,14 @@ namespace OnlineMovieTicketBooking_2pillars.Views
                 err_Warning.SetError(txt_Name, "Họ tên không hợp lệ!");
                 return false;
             }
+
+            string phoneNumber = txt_Phone.Text;
+            string phonePattern = "^[0-9]*$";
+            if (!Regex.IsMatch(phoneNumber, phonePattern))
+            {
+                err_Warning.SetError(txt_Phone, "Số điện thoại chỉ được chứa số.");
+                return false;
+            }
             if (string.IsNullOrEmpty(txt_Phone.Text) || string.IsNullOrWhiteSpace(txt_Phone.Text))
             {
                 err_Warning.SetError(txt_Name, "Vui lòng nhập số điện thoại");
@@ -73,7 +83,6 @@ namespace OnlineMovieTicketBooking_2pillars.Views
 
             using (var dbContext = new MovieDBContext())
             {
-                string phoneNumber = txt_Phone.Text;
                 var existingPhoneNumber = dbContext.Customers.FirstOrDefault(c => c.Phone == phoneNumber);
                 if (existingPhoneNumber != null)
                 {
@@ -84,5 +93,16 @@ namespace OnlineMovieTicketBooking_2pillars.Views
             return true;
         }
 
+        private void btn_Cancel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Application.Restart();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

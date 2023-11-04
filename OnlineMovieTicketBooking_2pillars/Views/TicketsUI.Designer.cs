@@ -89,7 +89,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(33, 403);
+            this.label5.Location = new System.Drawing.Point(33, 397);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(40, 20);
             this.label5.TabIndex = 4;
@@ -119,8 +119,9 @@
             // 
             this.rtb_MovieTitle.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtb_MovieTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtb_MovieTitle.Location = new System.Drawing.Point(36, 46);
+            this.rtb_MovieTitle.Location = new System.Drawing.Point(23, 37);
             this.rtb_MovieTitle.Name = "rtb_MovieTitle";
+            this.rtb_MovieTitle.ReadOnly = true;
             this.rtb_MovieTitle.Size = new System.Drawing.Size(442, 51);
             this.rtb_MovieTitle.TabIndex = 9;
             this.rtb_MovieTitle.Text = "";
@@ -129,8 +130,9 @@
             // 
             this.rtb_CustomerPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtb_CustomerPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtb_CustomerPhone.Location = new System.Drawing.Point(34, 199);
+            this.rtb_CustomerPhone.Location = new System.Drawing.Point(21, 190);
             this.rtb_CustomerPhone.Name = "rtb_CustomerPhone";
+            this.rtb_CustomerPhone.ReadOnly = true;
             this.rtb_CustomerPhone.Size = new System.Drawing.Size(268, 37);
             this.rtb_CustomerPhone.TabIndex = 9;
             this.rtb_CustomerPhone.Text = "";
@@ -139,8 +141,9 @@
             // 
             this.rtb_CustomerEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtb_CustomerEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtb_CustomerEmail.Location = new System.Drawing.Point(34, 242);
+            this.rtb_CustomerEmail.Location = new System.Drawing.Point(21, 233);
             this.rtb_CustomerEmail.Name = "rtb_CustomerEmail";
+            this.rtb_CustomerEmail.ReadOnly = true;
             this.rtb_CustomerEmail.Size = new System.Drawing.Size(268, 37);
             this.rtb_CustomerEmail.TabIndex = 9;
             this.rtb_CustomerEmail.Text = "";
@@ -149,8 +152,9 @@
             // 
             this.rtb_CustomerName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtb_CustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtb_CustomerName.Location = new System.Drawing.Point(34, 156);
+            this.rtb_CustomerName.Location = new System.Drawing.Point(21, 147);
             this.rtb_CustomerName.Name = "rtb_CustomerName";
+            this.rtb_CustomerName.ReadOnly = true;
             this.rtb_CustomerName.Size = new System.Drawing.Size(268, 37);
             this.rtb_CustomerName.TabIndex = 9;
             this.rtb_CustomerName.Text = "";
@@ -159,9 +163,10 @@
             // 
             this.rtb_Seats.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtb_Seats.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtb_Seats.Location = new System.Drawing.Point(282, 385);
+            this.rtb_Seats.Location = new System.Drawing.Point(269, 388);
             this.rtb_Seats.Name = "rtb_Seats";
-            this.rtb_Seats.Size = new System.Drawing.Size(196, 59);
+            this.rtb_Seats.ReadOnly = true;
+            this.rtb_Seats.Size = new System.Drawing.Size(196, 48);
             this.rtb_Seats.TabIndex = 9;
             this.rtb_Seats.Text = "";
             // 
@@ -169,8 +174,9 @@
             // 
             this.rtb_ReserID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtb_ReserID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtb_ReserID.Location = new System.Drawing.Point(282, 354);
+            this.rtb_ReserID.Location = new System.Drawing.Point(269, 345);
             this.rtb_ReserID.Name = "rtb_ReserID";
+            this.rtb_ReserID.ReadOnly = true;
             this.rtb_ReserID.Size = new System.Drawing.Size(196, 25);
             this.rtb_ReserID.TabIndex = 9;
             this.rtb_ReserID.Text = "";
@@ -179,8 +185,9 @@
             // 
             this.rtb_ScheduledMovie.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtb_ScheduledMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtb_ScheduledMovie.Location = new System.Drawing.Point(282, 466);
+            this.rtb_ScheduledMovie.Location = new System.Drawing.Point(269, 457);
             this.rtb_ScheduledMovie.Name = "rtb_ScheduledMovie";
+            this.rtb_ScheduledMovie.ReadOnly = true;
             this.rtb_ScheduledMovie.Size = new System.Drawing.Size(196, 32);
             this.rtb_ScheduledMovie.TabIndex = 9;
             this.rtb_ScheduledMovie.Text = "";
@@ -189,8 +196,9 @@
             // 
             this.rtb_TotalPrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtb_TotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtb_TotalPrice.Location = new System.Drawing.Point(282, 526);
+            this.rtb_TotalPrice.Location = new System.Drawing.Point(269, 539);
             this.rtb_TotalPrice.Name = "rtb_TotalPrice";
+            this.rtb_TotalPrice.ReadOnly = true;
             this.rtb_TotalPrice.Size = new System.Drawing.Size(196, 33);
             this.rtb_TotalPrice.TabIndex = 9;
             this.rtb_TotalPrice.Text = "";
