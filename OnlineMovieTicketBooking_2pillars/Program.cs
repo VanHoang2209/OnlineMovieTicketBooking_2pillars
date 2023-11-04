@@ -24,8 +24,8 @@ namespace OnlineMovieTicketBooking_2pillars
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_BookingTicketsUI());
-            //Application.Run(new frm_ReserChecking());
+            Application.Run(new BookingTicketsUI());
+            //Application.Run(new frm_EmployeeAdd());
         }
     }
 }
